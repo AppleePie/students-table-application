@@ -1,4 +1,4 @@
-body, html {
+html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -11,9 +11,4 @@ body, html {
   min-width: 100%; 
   min-height: 100%;
   background: #FFFFFF;
-}
-
-.body {
-  margin-left: 13%;
-  margin-right: 13%;
 }

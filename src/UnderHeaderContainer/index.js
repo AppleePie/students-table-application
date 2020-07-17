@@ -3,11 +3,11 @@ import './index.css';
 import NewStudentButton from './NewStudentButton';
 
 
-function UnderHeaderContainer() {
+function UnderHeaderContainer(props) {
     return (
         <div className="container">
             <label className="text-students-body">Студенты</label>
-            <NewStudentButton />
+            <NewStudentButton handleClick={props.handleClick}/>
         </div>
     );
 }
