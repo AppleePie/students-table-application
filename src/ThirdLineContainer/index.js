@@ -7,10 +7,14 @@ import SortSelector from './SortSelector';
 class SearchAndSort extends React.Component {
     render() {
         return (
-            <div className="container2">
-                <SearchLine/>
-                <SortSelector/>
-            </div>
+            this.props.isDefault
+                ? 
+                    <div className="container2">
+                        <SearchLine/>
+                        <SortSelector/>
+                    </div>
+                :
+                    <div></div>
         );
     }
 }

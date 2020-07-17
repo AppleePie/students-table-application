@@ -1,5 +1,4 @@
 import React from 'react';
-import sort from './sortDirection.svg';
 
 class SortSelector extends React.Component {
     state = {
@@ -20,7 +19,7 @@ class SortSelector extends React.Component {
             <div className="sort-selector">
                 <div className="sort-direction">
                     <button>
-                        <img src={sort} alt="sort.svg"/>
+                        <img src="/IMG/sortDirection.svg" alt="sort.svg"/>
                     </button>
                 </div>
                 <select>

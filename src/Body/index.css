@@ -2,4 +2,28 @@
     position: relative;
     margin-left: 13%;
     margin-right: 13%;
+    top: 75px;
+}
+
+.button-back {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 315px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 13%;
+    border: none;
+    background: none;
+    text-align: left;
+}
+
+.button-back label{
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    margin-left: 16px;
 }
