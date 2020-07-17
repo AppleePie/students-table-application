@@ -19,9 +19,7 @@ export default function SortSelector() {
             </div>
             <select>
                 {
-                    sortTypes.map((type, index) => {
-                        return <option key={index} className="sort-type">{type}</option>;
-                    })
+                    sortTypes.map((type, index) => <option key={index} className="sort-type">{type}</option>)
                 }
             </select>
         </div>

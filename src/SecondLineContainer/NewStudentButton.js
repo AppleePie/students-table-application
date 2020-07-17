@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function NewStudentButton(props) {
-    console.log(props)
     return (
         <button className="button-add-student" onClick={() => props.handleClick(false)}>
             <div className="button-group-text-plus">
