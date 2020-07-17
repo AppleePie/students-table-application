@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-function Header() {
+export default function Header() {
     return (
         <div className="header">
             <img className="circles" src='/IMG/circles.svg' alt = "circles.svg"/>
@@ -9,5 +9,3 @@ function Header() {
         </div>
     );
 }
-
-export default Header;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewStudentButton(props) {
+export default function NewStudentButton(props) {
     console.log(props)
     return (
         <button className="button-add-student" onClick={() => props.handleClick(false)}>
@@ -11,5 +11,3 @@ function NewStudentButton(props) {
         </button>
     );
 }
-
-export default NewStudentButton;

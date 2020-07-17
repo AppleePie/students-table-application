@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BackButton(props) {
+export default function BackButton(props) {
     return (
         !props.isDefaultScreen 
             ? 
@@ -13,5 +13,3 @@ function BackButton(props) {
             : null
         );
 }
-
-export default BackButton;

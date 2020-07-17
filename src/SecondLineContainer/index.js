@@ -3,21 +3,17 @@ import './index.css';
 import NewStudentButton from './NewStudentButton';
 
 
-function UnderHeaderContainer(props) {
+export default function UnderHeaderContainer(props) {
     return (
-        props.isDefault 
+        props.isDefaultScreen 
             ? 
                 <div className="container">
                 <label className="text-students-body">Студенты</label>
                 <NewStudentButton handleClick={props.handleClick}/>
                 </div>
             :
-                <div>
-                    <div className="container">
-                        <label className="text-students-body">Новый студент</label>
-                    </div>
+                <div className="container">
+                    <label className="text-students-body">Новый студент</label>
                 </div>
     );
 }
-
-export default UnderHeaderContainer;

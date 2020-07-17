@@ -1,22 +1,25 @@
 import React from 'react';
-import './index.css';
+import ChangeAvatarButton from './ChangeAvatarButton';
 import SearchLine from './SearchLine';
 import SortSelector from './SortSelector';
+import './index.css';
 
 
-class SearchAndSort extends React.Component {
-    render() {
-        return (
-            this.props.isDefault
-                ? 
-                    <div className="container2">
-                        <SearchLine/>
-                        <SortSelector/>
+export default function SearchAndSort(props) {
+    return (
+        props.isDefaultScreen
+            ? 
+                <div className="search-container">
+                    <SearchLine/>
+                    <SortSelector/>
+                </div>
+            :
+                <div className="avatar-circle">
+                    <span>ФИ</span>
+                    <div className="avatar-text">
+                        <ChangeAvatarButton />
+                        <label className="avatar-size">500х500</label>
                     </div>
-                :
-                    <div></div>
-        );
-    }
+                </div>
+    );
 }
-
-export default SearchAndSort;

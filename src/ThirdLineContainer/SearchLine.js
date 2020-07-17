@@ -1,25 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
 
-class SearchLine extends React.Component {
-    state = {
-        text: ''
-    }
+export default function SearchLine() {
+    const [text, handleChange] = useState('');
 
-    render() {
-        return (
-            <input 
-                type="text"
-                className="searchline"
-                onChange={this.handleChange}
-                placeholder="Поиск по имени"
-                value={this.state.text}
-            />
-        );
-    }
-
-    handleChange = (e) => {
-        this.setState({text: e.target.value})
-    }
+    return (
+        <input 
+            type="text"
+            className="searchline"
+            onChange={(e) => handleChange(e.target.value)}
+            placeholder="Поиск по имени"
+            value={text}
+        />
+    );
 }
-
-export default SearchLine;
