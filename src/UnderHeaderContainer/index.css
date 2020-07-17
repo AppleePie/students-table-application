@@ -1,0 +1,56 @@
+.container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4%;
+}
+
+.text-students-body {
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 50px;
+    align-items: center;
+    color: #000000;
+}
+
+.button-add-student {
+    position: relative;
+    background: #49C2E8;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding-left: 75px;
+    padding-right: 60px;
+}
+
+.button-background {
+    left: 0px;
+    right: 0px;
+    top: 0%;
+    bottom: 0%;
+    background: #49C2E8;
+    border-radius: 10px;
+}
+
+.button-group-text-plus {
+    display: flex;
+    align-items: center;
+}
+
+.button-plus {
+    margin-right: 15px;
+    align-items: center;
+}
+
+.button-text {
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
