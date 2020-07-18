@@ -1,11 +1,12 @@
 import React from 'react';
 import InputField from './InputField';
 import './index.css';
-import SortedSelector from './SelectorField';
+import SortedSelector from './PseudoSelect';
 
 export default function Content(props) {
     const specialities = [
         'Прикладная информатика',
+        'Прикладная математика',
         'Механика',
         'Математика',
         'Компьютерные науки',
@@ -23,6 +24,7 @@ export default function Content(props) {
                         <InputField name="Email" placeholder="proverka@example.com" type="email"/>
                         <SortedSelector name="Специальность" items={specialities.slice()}/>
                         <SortedSelector name="Группа" items={groups.slice()}/>
+                        <InputField name="Рейтинг" placeholder="0" type="text" />
                         <SortedSelector name="Пол" items={['Мужской', 'Женский']}/>
                         <SortedSelector name="Любимый цвет" items={colors}/>
                     </div>

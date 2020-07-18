@@ -7,7 +7,7 @@ export default function InputField(props) {
         <div className="input-field">
             <label className="field-name">{props.name}</label>
             <input
-                className="field-value"
+                className="field-input"
                 type={props.type}
                 placeholder={props.placeholder}
                 value={value}

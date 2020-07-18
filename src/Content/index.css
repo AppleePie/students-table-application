@@ -4,23 +4,21 @@
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: left;
-    height: 20em;
+    height: 30em;
     max-width: 837px;
 }
 
 .input-field {
-    margin-top: 1%;
     display: flex;
     padding-top: 2%;
     align-items: left;
     flex-direction: column;
-    flex-wrap: wrap;
-
 }
 
 .field-name {
     min-width: 38px;
     height: 20px;
+    text-align: left;
 
     font-family: Geometria;
     font-style: normal;
@@ -30,18 +28,96 @@
     color: #000000;
 }
 
-.field-value {  
+.field-input {  
+    position: relative;
     height: 48px;
     width: 380px;
     outline: none;
     border: none;
     background: #FFFFFF;
+    display: flex;
+    align-items: center;
     
     box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
     border-radius: 6px;
 }
 
+.field-select {  
+    position: relative;
+    height: 48px;
+    width: 380px;
+    outline: none;
+    border: none;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    
+    box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+.pseudo-select {
+    position: relative;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pseudo-select-options {
+    position: absolute;
+    top: 100%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    background: #FFFFFF;
+
+    box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+.pseudo-select:after {
+    content: "";
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #000 transparent transparent transparent;
+    pointer-events: none;
+    position: absolute;
+    top: 75%;
+    right: 12%;
+    z-index: 1;
+    margin-top: -3px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 9px;
+    padding-left: 15px;
+    width: 380px;
+    text-align: left;
+    background-color: #FFFFFF;
+    outline: rgba(73, 194, 232, 0.11);;
+    border: none;
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 5px;
+    color: #000000;
+}
+
+.ok {
+    position: absolute;
+    right: 10%;
+
+}
+
 .submit {
+    margin-top: 2%;
     width: 380px;
     position: relative;
     background: #49C2E8;
