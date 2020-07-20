@@ -1,6 +1,6 @@
 import React from 'react';
-import './index.css';
 import NewStudentButton from './NewStudentButton';
+import './index.css';
 
 
 export default function UnderHeaderContainer(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import InputField from './InputField';
 import './index.css';
-import SortedSelector from './PseudoSelect';
+import SortedSelector from './SelectorField';
 import ColorsSelector from './ColorCircles';
 
 export default function Content(props) {
@@ -20,12 +20,12 @@ export default function Content(props) {
             ?
                 <>
                     <div className="content-container">
-                        <InputField name="ФИО" placeholder="Иванов Иван Иванович" type="text" changeAvatar={props.changeAvatar}/>
+                        <InputField name="ФИО" placeholder="Полное имя" type="text" changeAvatar={props.changeAvatar}/>
                         <InputField name="Email" placeholder="proverka@example.com" type="email"/>
                         <SortedSelector name="Специальность" items={specialities}/>
                         <SortedSelector name="Группа" items={groups}/>
                         <InputField name="Рейтинг" placeholder="0" type="text" />
-                        <SortedSelector name="Пол" placeholder='Выбрать' items={['Мужской', 'Женский']}/>
+                        <SortedSelector name="Пол" items={['Мужской', 'Женский']}/>
                         <ColorsSelector name="Любимый цвет"/>
                     </div>
                     <button className="submit">

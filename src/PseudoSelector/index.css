@@ -1,0 +1,38 @@
+.pseudo-select-options {
+    position: absolute;
+    top: 100%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 9px;
+    padding-left: 15px;
+    width: 100%;
+    text-align: left;
+    outline: rgba(73, 194, 232, 0.11);;
+    border: none;
+    background: none;
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 5px;
+    color: #000000;
+}
+
+.option:hover {
+    background: rgba(73, 194, 232, 0.11);
+}

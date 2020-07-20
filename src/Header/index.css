@@ -14,10 +14,23 @@
     line-height: 44px;
     font-weight: 500;
     font-size: 20px;
-    margin-left: 3%;
+    margin-left: 45px;
 }
 
-.circles {
-    max-width: 48px;
-    max-height: 48px;
+.circle {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    border: 5px solid #49C2E8;
+    border-radius: 50%;
+}
+
+.inner-circle {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    border: 5px solid #49C2E8;
+    margin: 0 auto;
 }
