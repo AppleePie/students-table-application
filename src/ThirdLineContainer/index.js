@@ -14,8 +14,10 @@ export default function SearchAndSort(props) {
                     <SortSelector/>
                 </div>
             :
-                <div className="avatar-circle">
-                    <span>ФИ</span>
+                <div className="avatar-container">
+                    <div className="avatar-circle">
+                        <span>{props.avatarText}</span>
+                    </div>
                     <div className="avatar-text">
                         <ChangeAvatarButton />
                         <label className="avatar-size">500х500</label>

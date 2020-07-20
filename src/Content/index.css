@@ -98,9 +98,9 @@
     padding-left: 15px;
     width: 380px;
     text-align: left;
-    background-color: #FFFFFF;
     outline: rgba(73, 194, 232, 0.11);;
     border: none;
+    background: none;
     font-family: Geometria;
     font-style: normal;
     font-weight: normal;
@@ -108,6 +108,10 @@
     line-height: 20px;
     margin-top: 5px;
     color: #000000;
+}
+
+.option:hover {
+    background: rgba(73, 194, 232, 0.11);
 }
 
 .ok {
@@ -146,4 +150,36 @@
     line-height: 20px;
     text-align: center;
     color: #FFFFFF;
+}
+
+.pseudo-select-colors {
+    background: #FFFFFF;
+
+    top: 120%;
+    padding-left: 5px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-radius: 6px;
+    box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+}
+
+.color-circle {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-left: 20px;
+    border: none;
+    outline: none;
+}
+
+.color-circle:hover {
+    height: 20px;
+    width: 20px;
 }

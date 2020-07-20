@@ -7,14 +7,16 @@ import './index.css';
 
 export default function Body() {
     const [isDefaultScreen, setScreen] = useState(true);
+    const [plaintText, setText] = useState('ФИ');
+    const avatarTextChange = (value) => setText(value);
 
     return ( 
         <>
             <BackButton handleClick={setScreen} isDefaultScreen={isDefaultScreen}/>
             <div className="body">
                 <UnderHeaderContainer handleClick={setScreen} isDefaultScreen={isDefaultScreen}/>
-                <ThirdLine isDefaultScreen={isDefaultScreen}/>
-                <Content isDefaultScreen={isDefaultScreen}/>
+                <ThirdLine isDefaultScreen={isDefaultScreen} avatarText={plaintText}/>
+                <Content isDefaultScreen={isDefaultScreen} changeAvatar={avatarTextChange}/>
             </div>
         </>
     );
