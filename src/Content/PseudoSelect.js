@@ -2,22 +2,21 @@ import React, { useState } from 'react';
 
 export default function PseudoSelect(props) {
     const items = props.items.slice();
-    const [isChoosen, setState] = useState(false);
-    const [choose, setChoose] = useState(items[0]);
+    const [isChoosen, setIsChoosen] = useState(false);
+    const [choose, setChoose] = useState(props.placeholder ? props.placeholder : items[0]);
     const [back, setBack] = useState(null);
-    const [textColor, setColor] = useState("#808080");
+    const [textColor, setTextColor] = useState("#808080");
 
     return (
         <div className="pseudo-select">
             <label className="field-name">{props.name}</label>
-            <button className="field-select" style={{color: textColor}}>
+            <button className="field-select" style={{color: textColor}} onClick={() => setIsChoosen(!isChoosen)}>
                 <label>{choose}</label>
             </button>
             {
                 isChoosen
                     ? 
                         <div className="pseudo-select-options">
-                            <button className="option" style={{color: '#808080'}} disabled>{props.placeholder ? props.placeholder : items[0]}</button>
                             {
                                 items.map((item, index) => {
                                     return (
@@ -40,7 +39,8 @@ export default function PseudoSelect(props) {
     );
 
     function handleClick(item) {
+        setTextColor('#000000')
         setChoose(item);
-        setState(!isChoosen);
+        setIsChoosen(!isChoosen);
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import InputField from './InputField';
 import './index.css';
 import SortedSelector from './PseudoSelect';
-import ColorsSelector from './ColorCircle';
+import ColorsSelector from './ColorCircles';
 
 export default function Content(props) {
     const specialities = [
@@ -25,7 +25,7 @@ export default function Content(props) {
                         <SortedSelector name="Специальность" items={specialities}/>
                         <SortedSelector name="Группа" items={groups}/>
                         <InputField name="Рейтинг" placeholder="0" type="text" />
-                        <SortedSelector name="Пол" placeholder='Выбрать' items={['Другой', 'Мужской', 'Женский']}/>
+                        <SortedSelector name="Пол" placeholder='Выбрать' items={['Мужской', 'Женский']}/>
                         <ColorsSelector name="Любимый цвет"/>
                     </div>
                     <button className="submit">
