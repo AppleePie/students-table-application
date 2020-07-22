@@ -10,10 +10,14 @@ export default function SortSelector() {
         'Специальность',
         'Рейтинг'
     ];
-    const handleClick = (item) => setChoosen(item);
+    const handleClick = (item) => {
+        setChoosen(item);
+        setIsChoosen(!isChoosen);
+    };
 
     const [isChoosen, setIsChoosen] = useState(false);
     const [choose, setChoosen] = useState(sortTypes[0]);
+    const [selectedItemId, setSelectedItemId] = useState(0);
 
     return (
         <div className="sort-selector-container">
@@ -22,10 +26,12 @@ export default function SortSelector() {
                     <img src="/IMG/sortDirection.svg" alt="sort.svg"/>
                 </button>
             </div>
-            <button className="sort-selector" onClick={() => setIsChoosen(!isChoosen)}>
-                <label>{choose}</label>
-            </button>
-            {isChoosen ? <PseudoSelect items={sortTypes} action={handleClick}/> : null}
+            <div style={{height: "max-content"}}>
+                <button className="sort-selector" onClick={() => setIsChoosen(!isChoosen)}>
+                    {choose}
+                </button>
+                {isChoosen ? <PseudoSelect items={sortTypes} action={handleClick} setSelectedItemId={setSelectedItemId} selectedItemId={selectedItemId}/> : null}
+            </div>
         </div>
         
     );

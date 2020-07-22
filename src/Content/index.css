@@ -3,14 +3,13 @@
     align-items: left;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: left;
-    height: 30em;
+    height: 33em;
     max-width: 837px;
 }
 
 .input-field {
     display: flex;
-    padding-top: 2%;
+    padding-top: 20px;
     align-items: left;
     flex-direction: column;
 }
@@ -32,13 +31,19 @@
 
 .field-input {  
     position: relative;
-    height: 48px;
-    width: 380px;
+    padding: 16px 77px 12px 20px;
+    width: 283px;
     outline: none;
     border: none;
     background: #FFFFFF;
     display: flex;
     align-items: center;
+
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
     
     box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
     border-radius: 6px;
@@ -46,13 +51,19 @@
 
 .field-select {  
     position: relative;
-    height: 48px;
+    padding: 16px 77px 12px 20px;
     width: 380px;
     outline: none;
     border: none;
     background: #FFFFFF;
     display: flex;
     align-items: center;
+
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
     
     box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
     border-radius: 6px;
@@ -60,7 +71,7 @@
 
 .pseudo-select {
     position: relative;
-    padding-top: 2%;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -79,7 +90,6 @@
 }
 
 .submit {
-    margin-top: 2%;
     width: 380px;
     position: relative;
     background: #49C2E8;
@@ -112,7 +122,7 @@
 
 .pseudo-select-colors {
     background: #FFFFFF;
-    top: 120%;
+    top: 105%;
     padding-left: 5px;
     padding-right: 25px;
     padding-top: 10px;
@@ -137,6 +147,5 @@
 }
 
 .color-circle:hover {
-    height: 20px;
-    width: 20px;
+    box-shadow: 0px 0px 10px #000000;
 }

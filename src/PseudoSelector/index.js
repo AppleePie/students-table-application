@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.css';
 
 export default function PseudoSelect(props) {
     const items = props.items.slice();
-    const handleClick = (item) => props.action(item);
-
-    const [currentItem, setCurrentItem] = useState(null)
-
+    const handleClick = (item, index) => {
+        props.action(item);
+        props.setSelectedItemId(index);
+    }
 
     return (
         <div className="pseudo-select-options">
@@ -14,13 +14,13 @@ export default function PseudoSelect(props) {
                 items.map((item, index) => {
                     return (
                         <button 
+                            id={index}
                             key={index} 
                             className="option" 
-                            onClick={() => handleClick(item)} 
-                            onMouseEnter={(e) => setCurrentItem(item)}
+                            onClick={() => handleClick(item, index)}
                         >
-                            <label style={{backgroundColor: "none"}}>{item}</label>
-                            {currentItem === item ? <img src='/IMG/ok.svg' style={{position: 'absolute', right: "10%"}} alt="Выбрано"/> : null}
+                            {item}
+                            {index === props.selectedItemId ? <img src='/IMG/ok.svg' style={{position: 'absolute', right: "10%"}} alt="Выбрано"/> : null}
                         </button>
                     );
                 })

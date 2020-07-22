@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 
 export default function ColorCircle(props) {
     const [textColor, setTextColor] = useState('#808080');
-    const [isChoosen, setState] = useState(false);
+    const [isChoosen, setIsChoosen] = useState(false);
     const [choose, setChoose] = useState('Выбрать');
 
     const colorsCodes = ['#49C2E8', '#E25B5B', '#83C872', '#F7FB53', '#000000', '#EFA638'];
@@ -19,8 +19,8 @@ export default function ColorCircle(props) {
     return (
         <div className="pseudo-select">
             <label className="field-name">{props.name}</label>
-            <button className="field-select" style={{color: textColor}} onClick={() => setState(!isChoosen)}>
-                <label>{choose}</label>
+            <button className="field-select" style={{color: textColor}} onClick={() => setIsChoosen(!isChoosen)}>
+                {choose}
             </button>
             {
                 isChoosen
@@ -29,9 +29,8 @@ export default function ColorCircle(props) {
                             {
                                 colorsCodes.map((item, index) => {
                                     return (
-                                        <div className="color-option">
+                                        <div key={index}  className="color-option">
                                             <button 
-                                                key={index} 
                                                 className="color-circle" 
                                                 style={{background: item}}
                                                 onClick={() => handleClick(item)}
@@ -53,6 +52,7 @@ export default function ColorCircle(props) {
     );
 
     function handleClick(currentColor) {
+        setIsChoosen(!isChoosen);
         setChoose(colors[currentColor]); 
         setTextColor('#000000');
     }
