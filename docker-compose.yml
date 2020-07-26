@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo
+    container_name: database
+    restart: always
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+
+  admin:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  client:
+    stdin_open: true
+    tty: true
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
+    restart: always
+    container_name: client
+    ports:
+      - 3000:3000
+    depends_on: 
+      - server
+
+  server:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+    environment: 
+      DATABASE_URL: mongodb://admin:admin@mongo:27017/
+    restart: always
+    container_name: server
+    ports: 
+      - 4000:4000
+    depends_on: 
+      - mongo
+
+volumes:
+  mongodb_data:
+    driver: local
