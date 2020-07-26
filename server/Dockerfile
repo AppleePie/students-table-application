@@ -1,7 +1,7 @@
 FROM node:alpine
 WORKDIR /usr/server
 
-COPY package.json ./
+COPY package*.json ./
 RUN npm install && npm install mongodb
 COPY . .
 
