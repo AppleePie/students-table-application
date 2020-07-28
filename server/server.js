@@ -7,29 +7,35 @@ const StudentScheme = require('./StudentScheme');
 const port = 4000;
 const app = express();
 
-let newStudent = new StudentScheme ({
-    name: "Дима Жвакин",
-    specialization: "Математика",
-    group: "МТ-101",
-    age: "18",
-    color: "Синий", 
-});
-
-mongoose.connect('mongodb://mongo:27017/students')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/api', (req, res) => {
-    res.send(newStudent);
-});
-
-let db;
-
-MongoClient.connect('mongodb://mongo:27017/students', (err, database) => {
+MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
     if (err) {
-        return console.log(err);
+        return console.error(err);
     }
-    db = database;
-    
+    const newStudent = new StudentScheme ({
+        name: "Дима Жвакин",
+        specialization: "Математика",
+        group: "МТ-101",
+        age: "18",
+        color: "Синий", 
+    });
+    const db = client.db('mongo');
+    const collection = db.collection('students');
+    app.get('/api', (req, res) => {
+        collection.insertOne(newStudent, (err, res) => {
+            if (err) {
+                console.log(err);
+            }
+        });
+        collection.find().toArray((err, docs) => {
+            if (err) {
+                console.error(err);
+                return res.sendStatus(500);
+            }
+            res.send(docs);
+        });
+    });
     app.listen(port, () => console.log("Listening port", port));
 });
