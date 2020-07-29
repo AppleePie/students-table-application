@@ -32,6 +32,7 @@ export default function SpecAndGroup(props) {
                         setCurrentSpecial(choose);
                         setDependenceValue('Выбрать');
                     }}
+                    handleChange={props.handleChange}
                 />
             </div>
             <div>
@@ -39,6 +40,7 @@ export default function SpecAndGroup(props) {
                     sideClick={(choose) => {
                         setDependenceValue(choose)
                     }}
+                    handleChange={props.handleChange}
                 />
             </div>
         </div>

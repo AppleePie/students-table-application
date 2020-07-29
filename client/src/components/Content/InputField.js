@@ -16,6 +16,7 @@ export default function InputField(props) {
                 placeholder={props.placeholder}
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
+                onBlur={() => props.handleChange(props.name, value)}
             />
         </div>
     );

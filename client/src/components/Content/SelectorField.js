@@ -5,6 +5,7 @@ export default function SelectorField(props) {
     const actions = (item) => {
         setTextColor('#000000')
         setChoose(item);
+        props.handleChange(props.name, item);
         setIsChoosen(!isChoosen);
         if (props.sideClick)
             props.sideClick(item);
