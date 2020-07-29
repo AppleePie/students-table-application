@@ -54,6 +54,7 @@ export default function ColorCircle(props) {
     function handleClick(currentColor) {
         setIsChoosen(!isChoosen);
         setChoose(colors[currentColor]); 
+        props.handleChange(colors[currentColor]);
         setTextColor('#000000');
-    }
+    };
 }

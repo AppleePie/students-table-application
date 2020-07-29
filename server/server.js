@@ -22,6 +22,7 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
     }
     const db = client.db('mongo');
     const collection = db.collection('students');
+
     app.get('/api/get', (req, res) => {
         collection.find().toArray((err, docs) => {
             if (err) {
@@ -31,16 +32,18 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
             res.send(docs);
         });
     });
+
     app.post('/api/post', (req, res) => {
         console.log(req.body);
         if (!req.body)
             return;
         const newStudent = new StudentScheme ({
             name: req.body['ФИО'],
-            specialization: req.body['Специальность'],
+            speciality: req.body['Специальность'],
             group: req.body['Группа'],
+            rating: req.body['Рейтинг'],
             age: "18",
-            color: "Желтый", 
+            color: req.body['Любимый цвет'], 
         });
         collection.insertOne(newStudent, (err, res) => {
             if (err) {

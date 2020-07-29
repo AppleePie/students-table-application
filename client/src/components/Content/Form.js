@@ -49,9 +49,7 @@ export default class Form extends React.Component {
                     <ColorsSelector handleChange={this.handleChange} name="Любимый цвет"/>
                 </div>
                 <button className="submit" type="submit" onClick={this.handleSubmit}>
-                    <div className="submit-background">
-                        <label className="submit-text">Создать</label>
-                    </div>
+                    <label className="submit-text">Создать</label>
                 </button>
             </>
         );
