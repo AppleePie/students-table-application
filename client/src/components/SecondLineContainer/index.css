@@ -24,26 +24,19 @@
     padding-right: 60px;
 }
 
-.button-background {
-    left: 0px;
-    right: 0px;
-    top: 0%;
-    bottom: 0%;
-    background: #49C2E8;
-    border-radius: 10px;
-}
-
 .button-group-text-plus {
     display: flex;
     align-items: center;
 }
 
 .button-plus {
+    cursor: pointer;
     margin-right: 15px;
     align-items: center;
 }
 
 .button-text {
+    cursor: pointer;
     font-family: Geometria;
     font-style: normal;
     font-weight: bold;

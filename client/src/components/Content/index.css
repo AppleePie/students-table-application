@@ -1,9 +1,89 @@
-.content-container {
+.avatar-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.avatar-circle {
+    margin-top: 2%;
+    text-align: center;
+    display: grid;
+    height: 80px;
+    width: 80px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+}
+
+.avatar-circle span {
+    margin: auto;
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    color: #49C2E8;
+}
+
+.avatar-text {
+    margin-top: 30px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-change-button {
+    width: 140px;
+    height: 20px;
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    text-align: left;
+    align-items: left;
+    text-decoration-line: underline;
+    color: #000000;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.inputfile {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.avatar-size {
+    width: 55px;
+    height: 16px;
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-left: 6px;
+    color: #000000;
+}
+
+
+
+.form-container {
     display: flex;
     align-items: left;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 35em;
+    height: 33em;
     max-width: 837px;
 }
 
@@ -31,8 +111,8 @@
 
 .field-input {  
     position: relative;
-    padding: 16px 77px 12px 20px;
-    width: 380px;
+    padding: 16px 0px 12px 20px;
+    width: 360px;
     outline: none;
     border: none;
     background: #FFFFFF;
@@ -90,7 +170,6 @@
 }
 
 .submit {
-    margin-top: 3%;
     margin-bottom: 3%;
     width: 380px;
     position: relative;
@@ -127,6 +206,8 @@
     line-height: 20px;
     text-align: center;
     color: #FFFFFF;
+    background: none;
+    cursor: pointer;
 }
 
 .pseudo-select-colors {
@@ -157,4 +238,113 @@
 
 .color-circle:hover {
     box-shadow: 0px 0px 10px #000000;
+}
+
+
+
+
+.table {
+    margin-top: 2%;
+    width: 100%;
+    position: relative;
+}
+
+.table tr {
+    height: 40px;
+}
+
+.table-background {
+    min-height: 400px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+.table thead {
+    margin-top: 4%;
+    margin-bottom: 16px;
+    text-align: left;
+}
+    .table th {
+        font-family: Geometria;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        width: 100px;
+        padding-right: 40px;
+    }
+
+    .table th:nth-child(2) {
+        width: 100px;
+        padding-right: 220px;
+    }
+
+    .table th:nth-child(3) {
+        width: max-content;
+        padding-right: 165px;
+    }
+
+
+
+.table tbody {
+    width: 100%;
+    background: none;
+    box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+}
+
+    .table td {
+        font-family: Geometria;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        width: 80px;
+        padding-right: 60px;
+    }
+
+    .table td:nth-child(2) {
+        width: 300px;
+        padding-right: 20px;
+    }
+
+    .table td:nth-child(3) {
+        width: 300px;
+        padding-right: 20px;
+    }
+
+    .table td:last-child {
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+.table-header-text {
+    width: 100px;
+    height: 20px;
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.table-color-circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 21px;
+}
+
+.table-trash-circle {
+    display: grid;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 16.3715px rgba(0, 0, 0, 0.1);
 }

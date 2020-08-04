@@ -7,7 +7,8 @@ export default function Header() {
             <div className="circle">
                 <div className="inner-circle"/>
             </div>
-            <label className="text-students-header">STUDENTS</label>
+            <span className="text-students-header">STUDENTS by</span>
+            <span className="text-author-header"> AppleePie</span>
         </div>
     );
 }

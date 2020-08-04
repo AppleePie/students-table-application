@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 var studentScheme = new Schema({
+    avatar: String,
     name: String,
     speciality: String,
     group: String,

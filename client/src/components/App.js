@@ -6,10 +6,10 @@ import './Geometria/stylesheet.css';
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <Body />
-    </div>
+    </>
   );
 }
 
