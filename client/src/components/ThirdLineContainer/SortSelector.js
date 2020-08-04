@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PseudoSelect from '../PseudoSelector';
 
-export default function SortSelector() {
+export default function SortSelector(props) {
     const sortTypes = [
         'Имя',
         'Фамилия',
@@ -12,6 +12,7 @@ export default function SortSelector() {
     ];
     const handleClick = (item) => {
         setChoosen(item);
+        props.setSortType(item);
         setIsChoosen(!isChoosen);
     };
 

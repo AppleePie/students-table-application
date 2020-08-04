@@ -35,7 +35,7 @@ function Table(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.filter(student => student.name.search(props.searchText) !== -1).map(item => (
+                    {data.filter(student => student.name.search(props.searchText) !== -1).sort(props.sort).map(item => (
                         <tr key={item._id}>
                             <td><img className="table-trash-circle" style={{height: '40px', width: '40px'}} src={item.avatar} alt='Аватар'/></td>
                             <td>{item.name}</td>

@@ -10,7 +10,7 @@ export default function SearchAndSort(props) {
             ? 
                 <div className="search-container">
                     <SearchLine setSearchText={props.setSearchText}/>
-                    <SortSelector/>
+                    <SortSelector setSortType={props.setSortType}/>
                 </div>
             : null
     );
