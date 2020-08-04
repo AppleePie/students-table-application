@@ -7,7 +7,7 @@ import './index.css';
 export default function Content(props) {
     return (
         props.isDefaultScreen
-            ? <Table />
+            ? <Table searchText={props.searchText}/>
             : <Form handleClick={props.handleClick} changeAvatar={props.changeAvatar}/>
     );
 }

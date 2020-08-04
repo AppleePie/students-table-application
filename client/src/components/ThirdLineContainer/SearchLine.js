@@ -1,14 +1,20 @@
 import React from 'react';
 import { useState } from 'react';
 
-export default function SearchLine() {
-    const [text, handleChange] = useState('');
+export default function SearchLine(props) {
+    const [text, setText] = useState('');
+
+    const handleChange = (event) => {
+        const newValue = event.target.value;
+        setText(newValue);
+        props.setSearchText(newValue);
+    }
 
     return (
         <input 
             type="text"
             className="searchline"
-            onChange={(e) => handleChange(e.target.value)}
+            onChange={(event) => handleChange(event)}
             placeholder="Поиск по имени"
             value={text}
         />

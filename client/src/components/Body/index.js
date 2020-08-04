@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UnderHeaderContainer from '../SecondLineContainer';
+import SecondLineContainer from '../SecondLineContainer';
 import ThirdLine from '../ThirdLineContainer';
 import BackButton from './BackButton';
 import Content from '../Content';
@@ -7,14 +7,15 @@ import './index.css';
 
 export default function Body() {
     const [isDefaultScreen, setScreen] = useState(true);
+    const [searchText, setSearchText] = useState('');
 
     return ( 
         <>
             <BackButton handleClick={setScreen} isDefaultScreen={isDefaultScreen}/>
             <div className="body">
-                <UnderHeaderContainer handleClick={setScreen} isDefaultScreen={isDefaultScreen}/>
-                <ThirdLine isDefaultScreen={isDefaultScreen}/>
-                <Content isDefaultScreen={isDefaultScreen} handleClick={setScreen}/>
+                <SecondLineContainer handleClick={setScreen} isDefaultScreen={isDefaultScreen}/>
+                <ThirdLine isDefaultScreen={isDefaultScreen} setSearchText={setSearchText}/>
+                <Content isDefaultScreen={isDefaultScreen} handleClick={setScreen} searchText={searchText}/>
             </div>
         </>
     );

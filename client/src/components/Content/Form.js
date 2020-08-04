@@ -16,7 +16,7 @@ export default class Form extends React.Component {
             "Рейтинг": "",
             "Пол": "",
             "Любимый цвет": "",
-            filedata: ''
+            avatar: ''
         }
     };
 
@@ -26,13 +26,26 @@ export default class Form extends React.Component {
         this.setState({data: temp});
     };
 
+    hadUniqueFileName = (originalFileName) => {
+        const data = this.state.data;
+        const temp = originalFileName.split('.');
+        const extension = temp[temp.length - 1];
+        return data['Email'] + '.' + extension
+    }
+
     handleSubmit = event => {
         event.preventDefault();
+        const avatarFileName = this.hadUniqueFileName(this.state.data.avatar.name);
+        this.handleChange('Аватар', `/uploads/${avatarFileName}`);
 
-        if (this.hasPassedValidation) {
+        if (this.hasPassedValidation()) {
             const data = this.state.data;
             const dataForResponse = new FormData();
             for (const field in data) {
+                if (field === 'avatar') {
+                    dataForResponse.append(field, data[field], avatarFileName);
+                    continue;
+                }
                 dataForResponse.append(field, data[field]);
             };
 

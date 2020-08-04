@@ -9,7 +9,7 @@ export default function SearchAndSort(props) {
         props.isDefaultScreen
             ? 
                 <div className="search-container">
-                    <SearchLine/>
+                    <SearchLine setSearchText={props.setSearchText}/>
                     <SortSelector/>
                 </div>
             : null

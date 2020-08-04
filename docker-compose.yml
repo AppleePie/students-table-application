@@ -26,8 +26,6 @@ services:
       - 3000:3000
     depends_on: 
       - server
-    volumes: 
-      - uploads:/server/uploads
 
   server:
     build: 
@@ -41,9 +39,9 @@ services:
       - 4000:4000
     depends_on: 
       - mongo
+    volumes: 
+      - ./server/uploads:/usr/server/uploads
 
 volumes:
   mongodb_data:
-    driver: local
-  img:
     driver: local
