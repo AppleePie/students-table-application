@@ -6,7 +6,7 @@ export default function BackButton(props) {
             ? 
                 <div>
                     <button id="back" className="button-back" onClick={() => props.handleClick(true)}>
-                        <img src='/IMG/arrow.svg' alt="arrow.svg"/>
+                        <img src='/IMG/arrow.svg' alt="стрелочка"/>
                         <label>НАЗАД К СПИСКУ СТУДЕНТОВ</label>
                     </button>
                 </div>

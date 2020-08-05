@@ -61,7 +61,7 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
                 speciality: req.body['Специальность'],
                 group: req.body['Группа'],
                 rating: req.body['Рейтинг'],
-                age: "18",
+                age: req.body['Возраст'],
                 color: req.body['Любимый цвет'], 
             });
 

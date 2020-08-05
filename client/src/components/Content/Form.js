@@ -14,6 +14,7 @@ export default class Form extends React.Component {
             "Специальность": "",
             "Группа": "",
             "Рейтинг": "",
+            "Возраст": "",
             "Пол": "",
             "Любимый цвет": "",
             avatar: ''
@@ -84,6 +85,7 @@ export default class Form extends React.Component {
                     <InputField name="Email" handleChange={this.handleChange} isValid={this.isValid} placeholder="proverka@example.com" type="email"/>
                     <SpecAndGroup handleChange={this.handleChange}/>
                     <InputField name="Рейтинг" handleChange={this.handleChange} isValid={this.isValid} placeholder="0" type="text" />
+                    <InputField name="Возраст" handleChange={this.handleChange} isValid={this.isValid} placeholder="0" type="text" />
                     <SelectorField name="Пол" handleChange={this.handleChange} items={['Мужской', 'Женский']}/>
                     <ColorsSelector name="Любимый цвет" handleChange={this.handleChange}/>
                 </div>

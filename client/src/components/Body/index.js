@@ -8,6 +8,7 @@ import './index.css';
 export default function Body() {
     const [isDefaultScreen, setScreen] = useState(true);
     const [searchText, setSearchText] = useState('');
+    const [sortType, setSortType] = useState('')
     const sortTypes = {
         'Имя': (student, nextStudent) => (student.name > nextStudent.name) ? 1 : -1,
         'Специальность': (student, nextStudent) => (student.speciality > nextStudent.speciality) ? 1 : -1,
@@ -16,7 +17,6 @@ export default function Body() {
         'Рейтинг': (student, nextStudent) => student.rating - nextStudent.rating,
         'Цвет': (student, nextStudent) => (student.color > nextStudent.color) ? 1 : -1,
     };
-    const [sortType, setSortType] = useState('')
 
     return ( 
         <>

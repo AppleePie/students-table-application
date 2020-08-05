@@ -19,7 +19,7 @@ export default function InputField(props) {
                 regex = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/
                 break;
             default:
-                regex = /[0-9]/;
+                regex = /[1-9][0-9]/;
         }
 
         if (props.isValid(value, regex)) {
