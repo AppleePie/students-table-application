@@ -49,13 +49,12 @@ export default class Form extends React.Component {
                 }
                 dataForResponse.append(field, data[field]);
             };
-
-            this.props.handleClick(true);
             fetch('/api/post', { 
                 method: 'POST',
                 body: dataForResponse
             })
                 .catch(e => console.log(e));
+            this.props.handleClick(true);
         }
     };
 

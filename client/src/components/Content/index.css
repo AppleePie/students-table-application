@@ -253,65 +253,57 @@
     text-align: left;
 }
     .table th {
-        padding-top: 25px;
         font-family: Geometria;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 20px;
         text-align: left;
-        width: 80px;
-        /* width: 100px; */
-        /* padding-right: 40px; */
+        padding-right: 40px;
     }
 
     .table th:first-child {
-        width: 100px;
-        padding: 25px 21px 0px 19px;
+        padding-left: 20px;
     }
 
 
 
 .table tbody {
-    width: 100%;
     background: none;
     box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
     border-radius: 6px;
 }
 
     .table td {
+        padding-top: 20px;
         font-family: Geometria;
         font-style: normal;
         font-weight: 500;
         font-size: 15px;
         line-height: 20px;
-        width: 80px;
         text-align: left;
-        padding: 20px 60px 0px 2px;
+        /* padding: 20px 60px 0px 2px; */
     }
 
     .table td:first-child {
-        padding-right: 0px;
+        padding-right: 20px;
         padding-left: 20px;
-        width: 10px;
-    }
-
-    .table td:nth-child(2) {
-        width: 300px;
-        padding-right: 20px;
-    }
-
-    .table td:nth-child(3) {
-        width: 300px;
-        padding-right: 20px;
+        text-align: center;
     }
 
     .table td:last-child {
-        height: 40px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        padding-right: 25px;
     }
+
+        /* .table td:nth-child(2) {
+            width: 300px;
+            padding-right: 20px;
+        }
+
+        .table td:nth-child(3) {
+            width: 300px;
+            padding-right: 20px;
+        } */
 
 
 .table-header-text {

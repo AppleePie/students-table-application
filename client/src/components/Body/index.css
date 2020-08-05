@@ -5,6 +5,7 @@
     top: 75px;
     height: 100%;
     max-width: 1420px;
+    min-width: 800px;
 }
 
 .button-back {
