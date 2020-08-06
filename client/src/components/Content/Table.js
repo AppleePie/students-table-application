@@ -40,7 +40,7 @@ function Table(props) {
                 <tbody>
                     {
                         data
-                            .filter(student => student.name.search(props.searchText) !== -1)
+                            .filter(student => student.name.toLowerCase().search(props.searchText.trim().toLowerCase()) !== -1)
                             .sort(props.sort)
                             .map(item => (
                                 <tr key={item._id}>
