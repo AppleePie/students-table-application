@@ -10,9 +10,6 @@ const app = express();
 const storageConfig = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, "uploads");
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname);
     }
 });
 
@@ -29,8 +26,7 @@ let upload = multer({storage: storageConfig}).single("avatar");
 MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
     if (err) {
         console.error(err);
-        res.sendStatus(500);
-        return;
+        return res.sendStatus(500);
     }
     const db = client.db('mongo');
     // db.collection('students').drop();
@@ -49,14 +45,12 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
     app.post('/api/post', (req, res) => {
         upload(req, res, function(err) {
             if(err) {
-                console.log(err);
-                res.sendStatus(500);
-                return;
+                console.error(err);
+                return res.sendStatus(500);
             }
-            console.log(req.file);
 
             const newStudent = new StudentScheme ({
-                avatar: req.body['Аватар'],
+                avatar: req.file.path,
                 name: req.body['ФИО'],
                 speciality: req.body['Специальность'],
                 group: req.body['Группа'],
@@ -67,8 +61,7 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
 
             collection.insertOne(newStudent, (err, res) => {
                 if (err) {
-                    console.error(err);
-                    return;
+                   return console.error(err);
                 }
             });
             res.sendStatus(200);
@@ -77,11 +70,28 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
 
     app.delete('/api/delete/:id', (req, res) => {
         const parameter = {_id: mongoose.Types.ObjectId(req.params.id)};
+        const fs = require('fs');
         collection.findOneAndDelete(parameter, (err, result) => {
             if (err) {
                 console.error(err);
+                res.sendStatus(500);
+                return;
             }
-            console.log(result);
+
+            fs.stat(result.value.avatar, (err, stats) => {
+                console.log(stats);
+             
+                if (err) {
+                    return console.error(err);
+                }
+             
+                fs.unlink(result.value.avatar, (err) => {
+                    if (err) {
+                        return console.log(err);
+                    }
+                    console.log('file deleted successfully');
+                });  
+            });
         });
     })
 
