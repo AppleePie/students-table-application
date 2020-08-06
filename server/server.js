@@ -71,6 +71,7 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
                     return;
                 }
             });
+            res.sendStatus(200);
         });
     });
 

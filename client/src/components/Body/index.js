@@ -11,19 +11,25 @@ export default function Body() {
     const [sortType, setSortType] = useState('Имя')
     const [sortOrder, setSortOrder] = useState(true);
 
-    const sortBy = (criterion) => {
+    const sortByStringValues = (criterion) => {
         const orderByAscending = (student, nextStudent) => student[criterion] > nextStudent[criterion] ? 1 : -1;
         const orderByDescending = (student, nextStudent) => student[criterion] < nextStudent[criterion] ? 1 : -1;
         return sortOrder ? orderByAscending : orderByDescending;
     };
 
+    const sortByNumberValues = (criterion) => {
+        const orderByAscending = (student, nextStudent) => student[criterion] - nextStudent[criterion]
+        const orderByDescending = (student, nextStudent) => nextStudent[criterion] - student[criterion];
+        return sortOrder ? orderByAscending : orderByDescending;
+    };
+
     const sortTypes = {
-        'Имя': sortBy('name'),
-        'Специальность': sortBy('speciality'),
-        'Группа': sortBy('group'),
-        'Возраст': sortBy('age'),
-        'Рейтинг': sortBy('rating'),
-        'Цвет': sortBy('color'),
+        'Имя': sortByStringValues('name'),
+        'Специальность': sortByStringValues('speciality'),
+        'Группа': sortByStringValues('group'),
+        'Возраст': sortByNumberValues('age'),
+        'Рейтинг': sortByNumberValues('rating'),
+        'Цвет': sortByStringValues('color'),
     };
 
     return ( 

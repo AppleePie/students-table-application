@@ -53,8 +53,9 @@ export default class Form extends React.Component {
                 method: 'POST',
                 body: dataForResponse
             })
+                .then(() => this.props.handleClick(true))
                 .catch(e => console.log(e));
-            this.props.handleClick(true);
+
         }
     };
 
