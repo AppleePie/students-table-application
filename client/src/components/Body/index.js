@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SecondLineContainer from '../SecondLineContainer';
-import ThirdLine from '../ThirdLineContainer';
+import ThirdLineContainer from '../ThirdLineContainer';
 import BackButton from './BackButton';
 import Content from '../Content';
 import './index.css';
@@ -8,14 +8,22 @@ import './index.css';
 export default function Body() {
     const [isDefaultScreen, setScreen] = useState(true);
     const [searchText, setSearchText] = useState('');
-    const [sortType, setSortType] = useState('')
+    const [sortType, setSortType] = useState('Имя')
+    const [sortOrder, setSortOrder] = useState(true);
+
+    const sortBy = (criterion) => {
+        const orderByAscending = (student, nextStudent) => student[criterion] > nextStudent[criterion] ? 1 : -1;
+        const orderByDescending = (student, nextStudent) => student[criterion] < nextStudent[criterion] ? 1 : -1;
+        return sortOrder ? orderByAscending : orderByDescending;
+    };
+
     const sortTypes = {
-        'Имя': (student, nextStudent) => (student.name > nextStudent.name) ? 1 : -1,
-        'Специальность': (student, nextStudent) => (student.speciality > nextStudent.speciality) ? 1 : -1,
-        'Группа': (student, nextStudent) => (student.group > nextStudent.group) ? 1 : -1,
-        'Возраст': (student, nextStudent) => (student.age > nextStudent.age) ? 1 : -1,
-        'Рейтинг': (student, nextStudent) => student.rating - nextStudent.rating,
-        'Цвет': (student, nextStudent) => (student.color > nextStudent.color) ? 1 : -1,
+        'Имя': sortBy('name'),
+        'Специальность': sortBy('speciality'),
+        'Группа': sortBy('group'),
+        'Возраст': sortBy('age'),
+        'Рейтинг': sortBy('rating'),
+        'Цвет': sortBy('color'),
     };
 
     return ( 
@@ -23,8 +31,20 @@ export default function Body() {
             <BackButton handleClick={setScreen} isDefaultScreen={isDefaultScreen}/>
             <div className="body">
                 <SecondLineContainer handleClick={setScreen} isDefaultScreen={isDefaultScreen}/>
-                <ThirdLine isDefaultScreen={isDefaultScreen} setSearchText={setSearchText} setSortType={setSortType}/>
-                <Content isDefaultScreen={isDefaultScreen} handleClick={setScreen} searchText={searchText} sort={sortTypes[sortType]}/>
+                <ThirdLineContainer
+                    isDefaultScreen={isDefaultScreen}
+                    setSearchText={setSearchText} 
+                    setSortType={setSortType}
+                    sortOrder={sortOrder}
+                    setSortOrder={setSortOrder}
+                />
+                <Content 
+                    isDefaultScreen={isDefaultScreen} 
+                    handleClick={setScreen} 
+                    searchText={searchText} 
+                    sort={sortTypes[sortType]}
+                    sortOrder={sortOrder}
+                />
             </div>
         </>
     );
