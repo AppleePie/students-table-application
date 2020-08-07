@@ -22,7 +22,11 @@
     text-align: left;
 }
 
-.button-back label{
+.button-back:hover {
+    text-decoration-line: underline;
+}
+
+.button-back span {
     font-family: Geometria;
     font-style: normal;
     font-weight: 500;

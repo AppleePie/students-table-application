@@ -181,20 +181,8 @@
     padding-bottom: 15px;
 }
 
-.submit-background {
-    left: 0px;
-    right: 0px;
-    top: 0%;
-    bottom: 0%;
-    background: #49C2E8;
-    border-radius: 10px;
-    font-family: Geometria;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    color: #FFFFFF;
+.submit:hover {
+    background: #2bbbe7;
 }
 
 .submit-text {
@@ -243,16 +231,12 @@
 
 
 
-.table {
+table {
     margin-top: 2%;
     width: 100%;
     position: relative;
 }
-
-.table thead {
-    text-align: left;
-}
-    .table th {
+    table th {
         font-family: Geometria;
         font-style: normal;
         font-weight: normal;
@@ -262,19 +246,19 @@
         padding-right: 40px;
     }
 
-    .table th:first-child {
+    table th:first-child {
         padding-left: 20px;
     }
 
 
 
-.table tbody {
+table tbody {
     background: none;
     box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
     border-radius: 6px;
 }
 
-    .table td {
+    table td {
         padding-top: 19px;
         font-family: Geometria;
         font-style: normal;
@@ -284,7 +268,7 @@
         text-align: left;
     }
 
-    .table td:first-child {
+    table td:first-child {
         padding-right: 20px;
         padding-left: 20px;
         text-align: center;
@@ -317,6 +301,7 @@
 }
 
 .table-trash-circle {
+    cursor: pointer;
     display: grid;
     height: 30px;
     width: 30px;
@@ -328,5 +313,5 @@
 }
 
 .table-trash-circle:hover {
-    border: 1px solid #000000;
+    box-shadow: 0px 0px 10px rgba(26, 25, 25, 1);
 }

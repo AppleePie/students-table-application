@@ -23,7 +23,7 @@ function Table(props) {
 
 
     return (
-            <table className="table">
+            <table>
                 <thead>
                     <tr>
                         <th width="4%"></th>
@@ -55,7 +55,12 @@ function Table(props) {
                                     <td>{item.age}</td>
                                     <td>{item.rating}</td>
                                     <td>
-                                        <div className="table-color-circle" style={{background: item.color}}/>
+                                       {
+                                        item.color.endsWith('.png') 
+                                        ?
+                                            <img className="table-color-circle" src={item.color} alt="Радуга"></img>
+                                        :
+                                            <div className="table-color-circle" style={{background: item.color}}/>}
                                     </td>
                                     <td>
                                         <button className="table-trash-circle" onClick={() => deleteRequest(item._id)}>

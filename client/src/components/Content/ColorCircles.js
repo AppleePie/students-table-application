@@ -13,7 +13,7 @@ export default function ColorCircle(props) {
         '#F7FB53': 'Жёлтый',
         '#000000': 'Чёрный',
         '#EFA638': 'Оранжевый',
-        'Радуга': 'Много любимых цветов'
+        '/IMG/rainbow.png': 'Много любимых цветов'
     }
 
     return (
@@ -41,7 +41,7 @@ export default function ColorCircle(props) {
                             }
                             <button 
                                 style={{background: "none", border: "none", padding: "0px", outline: "none"}}
-                                onClick={() => handleClick('Радуга')}
+                                onClick={() => handleClick('/IMG/rainbow.png')}
                             >
                                 <img className="color-circle" src="/IMG/rainbow.png" alt="LGBT"/>
                             </button>

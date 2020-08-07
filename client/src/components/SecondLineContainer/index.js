@@ -8,12 +8,12 @@ export default function UnderHeaderContainer(props) {
         props.isDefaultScreen 
             ? 
                 <div className="student-button-container">
-                    <label className="text-students-body">Студенты</label>
+                    <span className="text-students-body">Студенты</span>
                     <NewStudentButton handleClick={props.handleClick}/>
                 </div>
             :
                 <div className="student-button-container">
-                    <label className="text-students-body">Новый студент</label>
+                    <span className="text-students-body">Новый студент</span>
                 </div>
     );
 }

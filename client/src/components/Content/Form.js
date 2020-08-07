@@ -8,7 +8,6 @@ import Avatar from './Avatar';
 export default class Form extends React.Component {
     state = {
         data: {
-            "Аватар": "",
             "ФИО": "",
             "Email": "",
             "Специальность": "",
@@ -27,26 +26,14 @@ export default class Form extends React.Component {
         this.setState({data: temp});
     };
 
-    hadUniqueFileName = (originalFileName) => {
-        const data = this.state.data;
-        const temp = originalFileName.split('.');
-        const extension = temp[temp.length - 1];
-        return data['Email'] + '.' + extension
-    }
-
     handleSubmit = event => {
         event.preventDefault();
-        const avatarFileName = this.hadUniqueFileName(this.state.data.avatar.name);
-        this.handleChange('Аватар', `/uploads/${avatarFileName}`);
+
 
         if (this.hasPassedValidation()) {
             const data = this.state.data;
             const dataForResponse = new FormData();
             for (const field in data) {
-                if (field === 'avatar') {
-                    dataForResponse.append(field, data[field], avatarFileName);
-                    continue;
-                }
                 dataForResponse.append(field, data[field]);
             };
             fetch('/api/post', { 
@@ -74,18 +61,16 @@ export default class Form extends React.Component {
         return notifications.length === 0;
     };
 
-    isValid = (value, regex) => regex.test(value);
-
     render() {
         return (
             <>
                 <Avatar handleChange={this.handleChange}/>
                 <div className="form-container">
-                    <InputField name="ФИО" handleChange={this.handleChange} isValid={this.isValid} placeholder="Полное имя" type="text"/>
-                    <InputField name="Email" handleChange={this.handleChange} isValid={this.isValid} placeholder="proverka@example.com" type="email"/>
+                    <InputField name="ФИО" handleChange={this.handleChange} placeholder="Полное имя" type="text"/>
+                    <InputField name="Email" handleChange={this.handleChange} placeholder="proverka@example.com" type="email"/>
                     <SpecAndGroup handleChange={this.handleChange}/>
-                    <InputField name="Рейтинг" handleChange={this.handleChange} isValid={this.isValid} placeholder="0" type="text" />
-                    <InputField name="Возраст" handleChange={this.handleChange} isValid={this.isValid} placeholder="0" type="text" />
+                    <InputField name="Рейтинг" handleChange={this.handleChange} placeholder="0" type="text" />
+                    <InputField name="Возраст" handleChange={this.handleChange} placeholder="0" type="text" />
                     <SelectorField name="Пол" handleChange={this.handleChange} items={['Мужской', 'Женский']}/>
                     <ColorsSelector name="Любимый цвет" handleChange={this.handleChange}/>
                 </div>

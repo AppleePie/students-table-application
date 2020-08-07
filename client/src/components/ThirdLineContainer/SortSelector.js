@@ -25,7 +25,7 @@ export default function SortSelector(props) {
     
     return (
         <div className="sort-selector-container">
-            <button className="sort-selector" onClick={() => setIsChoosen(!isChoosen)}>
+            <button title="Сортировка" className="sort-selector" onClick={() => setIsChoosen(!isChoosen)}>
                 {choose}
             </button>
             <button className="sort-direction" onClick={() => props.setSortOrder(!props.sortOrder)}>

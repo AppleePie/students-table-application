@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from './Form';
 import Table from './Table';
-import '../Geometria/stylesheet.css';
 import './index.css';
 
 export default function Content(props) {

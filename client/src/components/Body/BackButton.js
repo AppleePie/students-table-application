@@ -5,9 +5,9 @@ export default function BackButton(props) {
         !props.isDefaultScreen 
             ? 
                 <div>
-                    <button id="back" className="button-back" onClick={() => props.handleClick(true)}>
+                    <button className="button-back" onClick={() => props.handleClick(true)}>
                         <img src='/IMG/arrow.svg' alt="стрелочка"/>
-                        <label>НАЗАД К СПИСКУ СТУДЕНТОВ</label>
+                        <span>НАЗАД К СПИСКУ СТУДЕНТОВ</span>
                     </button>
                 </div>
             : null

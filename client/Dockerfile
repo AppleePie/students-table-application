@@ -1,5 +1,5 @@
 FROM node:alpine
-WORKDIR /usr/src/
+WORKDIR /usr/client/
 
 COPY package*.json ./
 RUN npm install

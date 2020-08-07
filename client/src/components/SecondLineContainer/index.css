@@ -18,25 +18,27 @@
     position: relative;
     background: #49C2E8;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
     border: none;
     outline: none;
     padding-left: 75px;
     padding-right: 60px;
-}
-
-.button-group-text-plus {
-    display: flex;
-    align-items: center;
-}
-
-.button-plus {
     cursor: pointer;
+}
+
+.button-add-student:hover {
+    background: #2bbbe7;
+}
+
+.button-add-student img {
+    cursor: inherit;
     margin-right: 15px;
     align-items: center;
 }
 
-.button-text {
-    cursor: pointer;
+.button-add-student span {
+    cursor: inherit;
     font-family: Geometria;
     font-style: normal;
     font-weight: bold;

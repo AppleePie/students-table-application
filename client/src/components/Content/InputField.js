@@ -22,7 +22,7 @@ export default function InputField(props) {
                 regex = /[1-9][0-9]/;
         }
 
-        if (props.isValid(value, regex)) {
+        if (regex.test(value)) {
             setIsBad(false);
             props.handleChange(props.name, value);
         } else {
