@@ -44,7 +44,11 @@ function Table(props) {
                             .sort(props.sort)
                             .map(item => (
                                 <tr key={item._id}>
-                                    <td><img src={item.avatar} className="table-avatar-circle" alt='Аватар'/></td>
+                                    <td>
+                                        <div className="avatar-border">
+                                            <img className="table-avatar-circle" src={item.avatar} alt='Аватар'/>
+                                        </div>
+                                    </td>
                                     <td>{item.name}</td>
                                     <td>{item.speciality}</td>
                                     <td>{item.group}</td>
