@@ -1,37 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InputField from './InputField';
 import SelectorField from './SelectorField';
 import ColorsSelector from './ColorCircles';
 import SpecAndGroup from './SpecAndGroup';
 import Avatar from './Avatar';
 
-export default class Form extends React.Component {
-    state = {
-        data: {
-            "ФИО": "",
-            "Email": "",
-            "Специальность": "",
-            "Группа": "",
-            "Рейтинг": "",
-            "Возраст": "",
-            "Пол": "",
-            "Любимый цвет": "",
-            avatar: ''
-        }
-    };
+export default function Form(props) {
+    const [data, setData] = useState({
+        "ФИО": "",
+        "Email": "",
+        "Специальность": "",
+        "Группа": "",
+        "Рейтинг": "",
+        "Возраст": "",
+        "Пол": "",
+        "Любимый цвет": "",
+        avatar: ''
+    });
+    const [isValid, setIsValid] = useState(true);
 
-    handleChange = (name, value) => {
-        const temp = this.state.data;
+    const handleChange = (name, value) => {
+        const temp = data;
         temp[name] = value;
-        this.setState({data: temp});
+        setData(temp);
     };
 
-    handleSubmit = event => {
+    const handleSubmit = event => {
         event.preventDefault();
 
-
-        if (this.hasPassedValidation()) {
-            const data = this.state.data;
+        if (hasPassedValidation()) {
             const dataForResponse = new FormData();
             for (const field in data) {
                 dataForResponse.append(field, data[field]);
@@ -40,44 +37,73 @@ export default class Form extends React.Component {
                 method: 'POST',
                 body: dataForResponse
             })
-                .then(() => this.props.handleClick(true))
-                .catch(e => console.log(e));
-
+                .then(() => props.handleClick(true))
+                .catch(err => console.error(err));
+        } else {
+            setIsValid(false);
         }
     };
 
-    hasPassedValidation = () => {
-        const data = this.state.data;
-        const notifications = [];
-        for (const key in data) {
-            if (data[key] === '') {
-                notifications.push(key);
-            }
-        }
-        if (notifications.length !== 0) {
-           alert('Внимание! Вы не заполнили: ' + notifications.join(', ').toLowerCase());
-        }
-        
-        return notifications.length === 0;
-    };
+    const hasPassedValidation = () => !Object.values(data).includes('');
 
-    render() {
-        return (
-            <>
-                <Avatar handleChange={this.handleChange}/>
-                <div className="form-container">
-                    <InputField name="ФИО" handleChange={this.handleChange} placeholder="Полное имя" type="text"/>
-                    <InputField name="Email" handleChange={this.handleChange} placeholder="proverka@example.com" type="email"/>
-                    <SpecAndGroup handleChange={this.handleChange}/>
-                    <InputField name="Рейтинг" handleChange={this.handleChange} placeholder="0" type="text" />
-                    <InputField name="Возраст" handleChange={this.handleChange} placeholder="0" type="text" />
-                    <SelectorField name="Пол" handleChange={this.handleChange} items={['Мужской', 'Женский']}/>
-                    <ColorsSelector name="Любимый цвет" handleChange={this.handleChange}/>
-                </div>
-                <button  className="submit" type="submit" onClick={this.handleSubmit}>
-                    <label className="submit-text">Создать</label>
-                </button>
-            </>
-        );
-    };
+    return (
+        <>
+            <Avatar handleChange={handleChange}/>
+            <div className="form-container">
+                <InputField
+                    name="ФИО" 
+                    handleChange={handleChange}
+                    isValid={isValid} 
+                    setIsValid={setIsValid}
+                    placeholder="Полное имя" 
+                    type="text"
+                />
+                <InputField 
+                    name="Email" 
+                    handleChange={handleChange} 
+                    isValid={isValid} 
+                    setIsValid={setIsValid}
+                    placeholder="proverka@example.com" 
+                    type="email"
+                />
+                <SpecAndGroup 
+                    handleChange={handleChange}
+                    isValid={isValid} 
+                    setIsValid={setIsValid}
+                />
+                <InputField 
+                    name="Рейтинг" 
+                    handleChange={handleChange} 
+                    isValid={isValid} 
+                    setIsValid={setIsValid}
+                    placeholder="0" 
+                    type="text" 
+                />
+                <InputField 
+                    name="Возраст" 
+                    handleChange={handleChange} 
+                    isValid={isValid} 
+                    setIsValid={setIsValid}
+                    placeholder="0" 
+                    type="text"
+                />
+                <SelectorField 
+                    name="Пол" 
+                    handleChange={handleChange} 
+                    isValid={isValid} 
+                    setIsValid={setIsValid}
+                    items={['Мужской', 'Женский']}
+                />
+                <ColorsSelector
+                    name="Любимый цвет" 
+                    handleChange={handleChange}
+                    isValid={isValid} 
+                    setIsValid={setIsValid}
+                />
+            </div>
+            <button  className="submit" type="submit" onClick={handleSubmit}>
+                <label className="submit-text">Создать</label>
+            </button>
+        </>
+    );
 }

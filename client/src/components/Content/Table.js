@@ -57,10 +57,10 @@ function Table(props) {
                                     <td>
                                        {
                                         item.color.endsWith('.png') 
-                                        ?
-                                            <img className="table-color-circle" src={item.color} alt="Радуга"></img>
-                                        :
-                                            <div className="table-color-circle" style={{background: item.color}}/>}
+                                            ?
+                                                <img className="table-color-circle" src={item.color} alt="Радуга"></img>
+                                            :
+                                                <div className="table-color-circle" style={{background: item.color}}/>}
                                     </td>
                                     <td>
                                         <button className="table-trash-circle" onClick={() => deleteRequest(item._id)}>

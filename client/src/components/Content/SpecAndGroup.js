@@ -25,25 +25,26 @@ export default function SpecAndGroup(props) {
     let groups = currentSpecial !== 'Выбрать' ? getAllGroups(currentSpecial) : [];
        
     return (
-        <div>
-            <div>
-                <SelectorField name="Специальность" items={specialities}
-                    sideClick={(choose) => {
-                        setCurrentSpecial(choose);
-                        setDependenceValue('Выбрать');
-                    }}
-                    handleChange={props.handleChange}
-                />
-            </div>
-            <div>
-                <SelectorField name="Группа" items={groups} dependenceValue={dependenceValue} 
-                    sideClick={(choose) => {
-                        setDependenceValue(choose)
-                    }}
-                    handleChange={props.handleChange}
-                />
-            </div>
-        </div>
+        <>
+            <SelectorField name="Специальность" items={specialities}
+                sideClick={(choose) => {
+                    setCurrentSpecial(choose);
+                    setDependenceValue('Выбрать');
+                    
+                }}
+                handleChange={props.handleChange}
+                isValid={props.isValid} 
+                setIsValid={props.setIsValid}
+            />
+            <SelectorField name="Группа" items={groups} dependenceValue={dependenceValue} 
+                sideClick={(choose) => {
+                    setDependenceValue(choose)
+                }}
+                handleChange={props.handleChange}
+                isValid={props.isValid} 
+                setIsValid={props.setIsValid}
+            />
+        </>
     );
 
     function getAllGroups(currentGroup) {
