@@ -41,10 +41,7 @@ export default function InputField(props) {
 
     useEffect(() => {
         if (!props.isValid) {
-            new Promise((resolve, reject) => {
-                props.setIsValid(true);
-                resolve();
-            }).then(onBlur);
+            onBlur();
         }
     }, [onBlur, props]);
 

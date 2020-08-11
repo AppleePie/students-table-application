@@ -15,8 +15,8 @@ export default function Form(props) {
         "Возраст": "",
         "Пол": "",
         "Любимый цвет": "",
-        avatar: ''
     });
+    const [avatar, setAvatar] = useState(null);
     const [isValid, setIsValid] = useState(true);
 
     const handleChange = (name, value) => {
@@ -33,6 +33,7 @@ export default function Form(props) {
             for (const field in data) {
                 dataForResponse.append(field, data[field]);
             };
+            dataForResponse.append('avatar', avatar)
             fetch('/api/post', { 
                 method: 'POST',
                 body: dataForResponse
@@ -48,13 +49,12 @@ export default function Form(props) {
 
     return (
         <>
-            <Avatar handleChange={handleChange}/>
-            <div className="form-container">
+            <Avatar setAvatar={setAvatar}/>
+            <div className="form-container" style={{flexWrap: window.outerWidth < 1000 ? 'no-wrap' : 'wrap', width: window.outerWidth > 1000 ? '1000px' : window.outerWidth + ''}}>
                 <InputField
                     name="ФИО" 
                     handleChange={handleChange}
                     isValid={isValid} 
-                    setIsValid={setIsValid}
                     placeholder="Полное имя" 
                     type="text"
                 />
@@ -62,7 +62,6 @@ export default function Form(props) {
                     name="Email" 
                     handleChange={handleChange} 
                     isValid={isValid} 
-                    setIsValid={setIsValid}
                     placeholder="proverka@example.com" 
                     type="email"
                 />
@@ -75,7 +74,6 @@ export default function Form(props) {
                     name="Рейтинг" 
                     handleChange={handleChange} 
                     isValid={isValid} 
-                    setIsValid={setIsValid}
                     placeholder="0" 
                     type="text" 
                 />
@@ -83,7 +81,6 @@ export default function Form(props) {
                     name="Возраст" 
                     handleChange={handleChange} 
                     isValid={isValid} 
-                    setIsValid={setIsValid}
                     placeholder="0" 
                     type="text"
                 />
@@ -91,14 +88,12 @@ export default function Form(props) {
                     name="Пол" 
                     handleChange={handleChange} 
                     isValid={isValid} 
-                    setIsValid={setIsValid}
                     items={['Мужской', 'Женский']}
                 />
                 <ColorsSelector
                     name="Любимый цвет" 
                     handleChange={handleChange}
                     isValid={isValid} 
-                    setIsValid={setIsValid}
                 />
             </div>
             <button  className="submit" type="submit" onClick={handleSubmit}>

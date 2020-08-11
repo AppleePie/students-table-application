@@ -25,6 +25,7 @@
     font-size: 28px;
     line-height: 34px;
     color: #49C2E8;
+    cursor: default;
 }
 
 .avatar-text {
@@ -82,7 +83,6 @@
 .form-container {
     display: flex;
     align-items: left;
-    flex-wrap: wrap;
     flex-direction: column;
     height: 500px;
     max-width: 1000px;
@@ -147,6 +147,7 @@
     
     box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .pseudo-select {

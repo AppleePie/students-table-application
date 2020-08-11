@@ -1,11 +1,7 @@
 .body {
     position: relative;
-    margin-left: 13%;
-    margin-right: 13%;
     top: 75px;
     height: 100%;
-    max-width: 1920px;
-    min-width: 1080px;
 }
 
 .button-back {
@@ -34,4 +30,20 @@
     line-height: 15px;
     color: #000000;
     margin-left: 16px;
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .body {
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+    .body {
+        margin-left: 13%;
+        margin-right: 13%;
+    }
 }

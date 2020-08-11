@@ -18,7 +18,7 @@ export default function ChangeAvatarButton(props) {
         if (file) {
             setIsFileExist(true);
             reader.readAsDataURL(file);
-            props.handleChange('avatar', file);
+            props.setAvatar(file);
         }
 
     }

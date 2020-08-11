@@ -28,12 +28,7 @@ export default function SelectorField(props) {
     }, [choose])
 
     useEffect(() => {
-        if (!props.isValid) {
-            new Promise((resolve, reject) => {
-                props.setIsValid(true);
-                resolve();
-            }).then(onBlur);
-        }
+        onBlur();
     }, [onBlur, props])
 
     return (

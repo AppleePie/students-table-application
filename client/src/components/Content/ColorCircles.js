@@ -34,10 +34,11 @@ export default function ColorCircle(props) {
 
     useEffect(() => {
         if (!props.isValid) {
-            new Promise((resolve, reject) => {
-                props.setIsValid(true);
-                resolve();
-            }).then(onBlur);
+            // new Promise((resolve, reject) => {
+            //     props.setIsValid(true);
+            //     resolve();
+            // }).then(onBlur);
+            onBlur();
         }
     }, [onBlur, props])
 
