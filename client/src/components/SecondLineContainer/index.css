@@ -1,15 +1,25 @@
 .student-button-container {
+    margin-top: 6%;
     position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .text-students-body {
     font-family: Geometria;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 50px;
     align-items: center;
     color: #000000;
+}
+
+@media screen and (min-width: 1024px) {
+    .text-students-body {
+        font-size: 40px;
+    }
 }
 
 .button-add-student {
@@ -20,9 +30,16 @@
     align-items: center;
     border: none;
     outline: none;
-    padding-left: 75px;
-    padding-right: 60px;
+    width: 100%;
+    max-width: 335px;
     cursor: pointer;
+}
+
+.button-text-container {
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
 }
 
 .button-add-student:hover {
@@ -44,4 +61,18 @@
     line-height: 20px;
     text-align: center;
     color: #FFFFFF;
+}
+
+@media screen and (max-width: 480px) {
+    .button-add-student {
+        max-width: 100%;
+        margin-top: 22px;
+    }
+
+    .student-button-container {
+        position: relative;
+        width: 100%;
+        display: grid;
+        justify-content: unset;
+    }
 }

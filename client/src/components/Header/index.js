@@ -5,12 +5,12 @@ export default function Header() {
     const isBigScreen =  window.outerWidth > 1024;
     const title = isBigScreen ? 'STUDENTS by' : 'STUDENTS';
     return (
-        <div className="header">
+        <header>
             <div className="circle">
                 <div className="inner-circle"/>
             </div>
             <span className="text-students-header">{title}</span>
             {isBigScreen ? <span className="text-author-header">AppleePie</span> : null}
-        </div>
+        </header>
     );
 }

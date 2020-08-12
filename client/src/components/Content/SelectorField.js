@@ -20,6 +20,13 @@ export default function SelectorField(props) {
         }
     };
 
+    const onClick = () => {
+        setIsChoosen(!isChoosen);
+        if (isChoosen) {
+            setIsBad(choose === 'Выбрать');
+        }
+    }
+
     const onBlur = useCallback((e) => {
         if (e === undefined || e.relatedTarget === null || e.relatedTarget.className !== 'option') {
             setIsChoosen(false);
@@ -28,7 +35,8 @@ export default function SelectorField(props) {
     }, [choose])
 
     useEffect(() => {
-        onBlur();
+        if (!props.isValid)
+            onBlur();
     }, [onBlur, props])
 
     return (
@@ -36,11 +44,12 @@ export default function SelectorField(props) {
             <label className="field-name">{props.name}</label>
             <button 
                 className="field-select" 
-                onClick={() => setIsChoosen(!isChoosen)} 
+                onClick={onClick} 
                 onBlur={onBlur} 
                 style={{color: textColor, border: isBad ? '1px solid red' : 'none'}}
             >
                 {props.dependenceValue ? props.dependenceValue : choose}
+            <div className="field-select-arrow"></div>
             </button>
                { 
                 isChoosen

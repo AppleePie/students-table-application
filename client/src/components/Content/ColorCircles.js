@@ -14,7 +14,7 @@ export default function ColorCircle(props) {
         '#F7FB53': 'Жёлтый',
         '#000000': 'Чёрный',
         '#EFA638': 'Оранжевый',
-        '/IMG/rainbow.png': 'Много любимых цветов'
+        '/IMG/rainbow.png': 'LGBTQ+ <3'
     }
 
     const handleSelect = (currentColor) => {
@@ -23,6 +23,11 @@ export default function ColorCircle(props) {
         setChoose(colors[currentColor]); 
         props.handleChange(props.name, currentColor);
         setTextColor('#000000');
+    };
+
+    const onClick = () => {
+        setIsChoosen(!isChoosen);
+        setIsBad(choose === 'Выбрать');
     };
 
     const onBlur = useCallback((e) => {
@@ -34,19 +39,21 @@ export default function ColorCircle(props) {
 
     useEffect(() => {
         if (!props.isValid) {
-            // new Promise((resolve, reject) => {
-            //     props.setIsValid(true);
-            //     resolve();
-            // }).then(onBlur);
-            onBlur();
+            onBlur(undefined);
         }
     }, [onBlur, props])
 
     return (
         <div className="pseudo-select">
             <label className="field-name">{props.name}</label>
-            <button className="field-select" style={{color: textColor, border: isBad ? '1px solid red' : '1px solid white'}} onClick={() => setIsChoosen(!isChoosen)}>
+            <button 
+                className="field-select" 
+                style={{color: textColor, border: isBad ? '1px solid red' : '1px solid white'}}
+                onClick={onClick}
+                // onBlur={onBlur}
+            >
                 {choose}
+                <div className="field-select-arrow"/>
             </button>
             {
                 isChoosen
@@ -55,25 +62,25 @@ export default function ColorCircle(props) {
                             {
                                 colorsCodes.map((item, index) => {
                                     return (
-                                        <div key={index}  className="color-option">
-                                            <button 
-                                                className="color-circle" 
-                                                style={{background: item}}
-                                                onClick={() => handleSelect(item)}
-                                            />
-                                        </div>
+                                        <div 
+                                            className="color-circle" 
+                                            style={{background: item}}
+                                            onClick={() => handleSelect(item)}
+                                        />
                                     );
                                 })
                             }
-                            <button 
-                                style={{background: "none", border: "none", padding: "0px", outline: "none"}}
+                            <div 
+                                style={{background: 'none'}}
+                                className="color-circle"
                                 onClick={() => handleSelect('/IMG/rainbow.png')}
                             >
                                 <img className="color-circle" src="/IMG/rainbow.png" alt="LGBT"/>
-                            </button>
+                            </div>
                         </div>
-                    : <small className="alarm" style={{visibility: isBad ? 'visible' : 'hidden'}}>Выберите одно из списка</small>
+                    : null
             }
+            <small className="alarm" style={{visibility: isBad ? 'visible' : 'hidden'}}>Выберите одно из списка</small>
         </div>
     );
 }

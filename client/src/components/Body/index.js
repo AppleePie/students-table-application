@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SecondLineContainer from '../SecondLineContainer';
 import ThirdLineContainer from '../ThirdLineContainer';
 import BackButton from './BackButton';
@@ -6,6 +6,10 @@ import Content from '../Content';
 import './index.css';
 
 export default function Body() {
+    useEffect(() => {
+        document.title = isDefaultScreen ? 'Студенты' : 'Новый студент';
+    })
+
     const [isDefaultScreen, setScreen] = useState(true);
     const [searchText, setSearchText] = useState('');
     const [sortType, setSortType] = useState('Имя')

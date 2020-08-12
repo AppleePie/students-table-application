@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Avatar.css';
 
 export default function ChangeAvatarButton(props) {
     const [file, setFile] = useState('');
@@ -10,7 +11,6 @@ export default function ChangeAvatarButton(props) {
         let reader = new FileReader();
         let file = event.target.files[0];
 
-    
         reader.onloadend = () => {
             setFile(reader.result);
         };

@@ -4,6 +4,7 @@ import SelectorField from './SelectorField';
 import ColorsSelector from './ColorCircles';
 import SpecAndGroup from './SpecAndGroup';
 import Avatar from './Avatar';
+import './Form.css';
 
 export default function Form(props) {
     const [data, setData] = useState({
@@ -50,7 +51,7 @@ export default function Form(props) {
     return (
         <>
             <Avatar setAvatar={setAvatar}/>
-            <div className="form-container" style={{flexWrap: window.outerWidth < 1000 ? 'no-wrap' : 'wrap', width: window.outerWidth > 1000 ? '1000px' : window.outerWidth + ''}}>
+            <div className="form-container">
                 <InputField
                     name="ФИО" 
                     handleChange={handleChange}
