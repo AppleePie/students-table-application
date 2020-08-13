@@ -154,4 +154,12 @@
     .submit {
         margin-top: 30px;
     }
+
+    .form-select {
+        font-size: 14px;
+    }
+
+    .field-input {
+        font-size: 14px;
+    }
 }

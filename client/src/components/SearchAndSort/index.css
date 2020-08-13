@@ -4,19 +4,11 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 3%;
-    /* padding-top: 4%; */
 }
 
 .searchline {
     position: relative;
-
     padding-left: 55px;
-
-    background-image: url("/IMG/loupe.svg");
-    background-repeat: no-repeat;
-    background-position-x: 20px;
-    background-position-y: center;
-
     border: none;
     outline: none;
     border-radius: 6px;
@@ -24,6 +16,12 @@
     
     height: 53px;
     width: 500%;
+}
+
+.search-loupe {
+    position: absolute;
+    margin-left: 20px;
+    z-index: 1;
 }
 
 .sort-selector-container {

@@ -29,8 +29,6 @@ export default function Body() {
 
     const sortTypes = {
         'Имя': sortByStringValues('name'),
-        'Специальность': sortByStringValues('speciality'),
-        'Группа': sortByStringValues('group'),
         'Возраст': sortByNumberValues('age'),
         'Рейтинг': sortByNumberValues('rating'),
         'Цвет': sortByStringValues('color'),

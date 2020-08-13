@@ -4,9 +4,7 @@ import PseudoSelect from '../PseudoSelector';
 export default function SortSelector(props) {
     const sortTypes = [
         'Имя',
-        'Группа',
         'Возраст',
-        'Специальность',
         'Рейтинг',
         'Цвет'
     ];

@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Avatar.css';
 
 export default function ChangeAvatarButton(props) {
     const [file, setFile] = useState('');
     const [isFileExist, setIsFileExist] = useState(false);
+    const [isBad, setIsBad] = useState(false);
+
+    useEffect(() => {
+        if (!props.isValid) {
+            setIsBad(true);
+        }
+    }, [props])
 
     const handleChange = (event) => {
         event.preventDefault();
@@ -18,7 +25,7 @@ export default function ChangeAvatarButton(props) {
         if (file) {
             setIsFileExist(true);
             reader.readAsDataURL(file);
-            props.setAvatar(file);
+            props.setAvatar('avatar', file);
         }
 
     }
@@ -30,7 +37,7 @@ export default function ChangeAvatarButton(props) {
                     ?
                         <img src={file} className="avatar-circle" style={{background: 'none'}} alt="Avatar"/>
                     :
-                        <div className="avatar-circle">
+                        <div className="avatar-circle" style={{border: isBad ? '1px solid red' : '1px sold white'}}>
                             <span>ФИ</span>
                         </div>
             }

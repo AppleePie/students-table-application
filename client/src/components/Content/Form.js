@@ -16,8 +16,8 @@ export default function Form(props) {
         "Возраст": "",
         "Пол": "",
         "Любимый цвет": "",
+        avatar: ''
     });
-    const [avatar, setAvatar] = useState(null);
     const [isValid, setIsValid] = useState(true);
 
     const handleChange = (name, value) => {
@@ -34,7 +34,6 @@ export default function Form(props) {
             for (const field in data) {
                 dataForResponse.append(field, data[field]);
             };
-            dataForResponse.append('avatar', avatar)
             fetch('/api/post', { 
                 method: 'POST',
                 body: dataForResponse
@@ -50,7 +49,7 @@ export default function Form(props) {
 
     return (
         <>
-            <Avatar setAvatar={setAvatar}/>
+            <Avatar isValid={isValid} setAvatar={handleChange}/>
             <div className="form-container">
                 <InputField
                     name="ФИО" 

@@ -22,7 +22,7 @@ export default function InputField(props) {
                 regex = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/;
                 return regex.test(value)
             }
-            return true;
+            return value !== '';
         }
 
         if (isValid()) {
@@ -41,7 +41,6 @@ export default function InputField(props) {
 
     const handleChange = (e) => {
         if (props.placeholder === '0') {
-            console.log(!isNaN(+e.target.value), +e.target.value)
             const newValue = !isNaN(+e.target.value) ? e.target.value.slice(0, 3) : '';
             setValue(newValue);
         } else {

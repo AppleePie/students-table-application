@@ -33,3 +33,9 @@
     background: rgba(73, 194, 232, 0.11);
     cursor: pointer;
 }
+
+@media screen and (max-width: 480px) {
+    .option {
+        font-size: 14px;
+    }
+}

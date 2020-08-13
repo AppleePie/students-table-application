@@ -50,7 +50,7 @@ export default function SelectorField(props) {
                 style={{color: textColor, border: isBad ? '1px solid red' : '1px solid white'}}
             >
                 {props.dependenceValue ? props.dependenceValue : choose}
-            <div className="field-select-arrow"></div>
+                <div className="field-select-arrow" style={ isChoosen ? { transform: 'ScaleY(-1)' } : null}/>
             </button>
                { 
                 isChoosen

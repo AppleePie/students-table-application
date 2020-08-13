@@ -85,7 +85,7 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
              
                 fs.unlink(result.value.avatar, (err) => {
                     if (err) {
-                        return console.log(err);
+                        return console.error(err);
                     }
                     console.log('file deleted successfully');
                 });  

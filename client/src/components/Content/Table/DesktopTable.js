@@ -16,7 +16,7 @@ export default function DesktopTable(props) {
                     <th width="3%"></th>
                     <th width="3%"></th>
                 </tr>
-                {props.data ? <tr style={{height: '16px'}}></tr> : null}
+                {students ? <tr style={{height: '16px'}}></tr> : null}
             </thead>
             <tbody>
                 {

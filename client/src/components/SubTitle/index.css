@@ -1,5 +1,5 @@
 .student-button-container {
-    margin-top: 72px;
+    margin-top: 31px;
     position: relative;
     width: 100%;
     display: flex;
@@ -65,7 +65,7 @@
 
     .student-button-container {
         position: relative;
-        margin-top: 47px;
+        margin-top: 0px;
         width: 100%;
         display: grid;
         justify-content: unset;

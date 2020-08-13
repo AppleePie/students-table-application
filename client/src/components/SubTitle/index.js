@@ -3,7 +3,7 @@ import NewStudentButton from './NewStudentButton';
 import './index.css';
 
 
-export default function UnderHeaderContainer(props) {
+export default function SubTitle(props) {
     return (
         props.isDefaultScreen 
             ? 

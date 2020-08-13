@@ -20,6 +20,11 @@ export default function MobileTable(props) {
         return age + ' лет';
     }
 
+    const getNameAndLastname = (name) => {
+        const newName = name.split(' ');
+        return newName[0] + ' ' + newName[1];
+    }
+
     return (
         students
             .filter(student => student.name.toLowerCase().indexOf(props.searchText.trim().toLowerCase()) !== -1)
@@ -29,7 +34,7 @@ export default function MobileTable(props) {
                         <div className="mobile-table-header">
                         <div className="avatar" style={{backgroundImage: `url('${student.avatar}')`}}/>
                             <div className="main-cell">
-                                <span>{student.name}</span>
+                                <span>{getNameAndLastname(student.name)}</span>
                                 <div className="color-rating-cell">
                                 {
                                         student.color.endsWith('.png') 
