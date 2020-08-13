@@ -6,9 +6,9 @@ services:
     container_name: database
     restart: always
     environment: 
-      MONGODB_USER: "${db_user_env}"
-      MONGODB_DATABASE: "${dbname_env}"
-      MONGODB_PASS: "${db_pass}"
+      MONGODB_USER: admin
+      MONGODB_DATABASE: mongo
+      MONGODB_PASS: pass
     ports:
       - 27017:27017
     volumes:
