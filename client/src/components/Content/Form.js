@@ -19,7 +19,7 @@ export default function Form(props) {
         avatar: ''
     });
     const [isValid, setIsValid] = useState(true);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (name, value) => {
         const temp = data;
@@ -36,14 +36,14 @@ export default function Form(props) {
                 dataForResponse.append(field, data[field]);
             };
             if (!isLoading) {
-                setIsLoading(false);
+                setIsLoading(true);
                 fetch('/api/post', { 
                     method: 'POST',
                     body: dataForResponse
                 })
                     .then(() => {
                         props.handleClick(true);
-                        setIsLoading(true);
+                        setIsLoading(false);
                     })
                     .catch(err => console.error(err));
             }
