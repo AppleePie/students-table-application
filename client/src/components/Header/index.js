@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 
 export default function Header() {
-    const isBigScreen =  window.outerWidth <= 480;
+    const isBigScreen =  window.outerWidth >= 480;
     const title = isBigScreen ? 'STUDENTS by' : 'STUDENTS';
     return (
         <header>
