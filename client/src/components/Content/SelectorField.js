@@ -5,7 +5,7 @@ export default function SelectorField(props) {
     const [isChoosen, setIsChoosen] = useState(false);
     const [choose, setChoose] = useState('Выбрать');
     const [textColor, setTextColor] = useState("#808080");
-    const [selectedItemId, setSelectedItemId] = useState(0);
+    const [selectedItemId, setSelectedItemId] = useState(-1);
     const [isBad, setIsBad] = useState(false);
 
     const handleSelect = (item) => {
