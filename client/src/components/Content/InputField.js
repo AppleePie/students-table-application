@@ -41,7 +41,7 @@ export default function InputField(props) {
 
     const handleChange = (e) => {
         if (props.placeholder === '0') {
-            const newValue = !isNaN(+e.target.value) ? e.target.value.slice(0, 3) : '';
+            const newValue = !isNaN(+e.target.value) && e.target.value !== '' ? +e.target.value.slice(0, 3) : '';
             setValue(newValue);
         } else {
             setValue(e.target.value)

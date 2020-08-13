@@ -8,4 +8,4 @@ COPY . .
 
 EXPOSE 4000
 
-CMD node server
+CMD sleep 5 && node server
