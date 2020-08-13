@@ -56,7 +56,7 @@ export default function Form(props) {
                     name="ФИО" 
                     handleChange={handleChange}
                     isValid={isValid} 
-                    placeholder="Полное имя" 
+                    placeholder="Фамилия Имя Отчество" 
                     type="text"
                 />
                 <InputField 

@@ -14,7 +14,7 @@ export default function SearchLine(props) {
         <input 
             type="text"
             className="searchline"
-            onChange={(event) => handleChange(event)}
+            onChange={handleChange}
             placeholder="Поиск по имени"
             value={text}
         />

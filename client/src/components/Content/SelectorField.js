@@ -20,14 +20,14 @@ export default function SelectorField(props) {
         }
     };
 
-    const onClick = () => {
+    const handleCLick = () => {
         setIsChoosen(!isChoosen);
         if (isChoosen) {
             setIsBad(choose === 'Выбрать');
         }
     }
 
-    const onBlur = useCallback((e) => {
+    const handleBlur = useCallback((e) => {
         if (e === undefined || e.relatedTarget === null || e.relatedTarget.className !== 'option') {
             setIsChoosen(false);
             setIsBad(choose === 'Выбрать')
@@ -36,16 +36,16 @@ export default function SelectorField(props) {
 
     useEffect(() => {
         if (!props.isValid)
-            onBlur();
-    }, [onBlur, props])
+            handleBlur();
+    }, [handleBlur, props])
 
     return (
         <div className="pseudo-select">
             <label className="field-name">{props.name}</label>
             <button 
                 className="field-select" 
-                onClick={onClick} 
-                onBlur={onBlur} 
+                onClick={handleCLick} 
+                onBlur={handleBlur} 
                 style={{color: textColor, border: isBad ? '1px solid red' : 'none'}}
             >
                 {props.dependenceValue ? props.dependenceValue : choose}

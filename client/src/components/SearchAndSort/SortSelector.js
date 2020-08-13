@@ -17,7 +17,7 @@ export default function SortSelector(props) {
         setIsChoosen(!isChoosen);
     };
 
-    const onBlur = (e) => {
+    const handleBlur = (e) => {
         if (e.relatedTarget === null || e.relatedTarget.className !== 'option') {
             setIsChoosen(false);
         }
@@ -28,7 +28,7 @@ export default function SortSelector(props) {
     const [selectedItemId, setSelectedItemId] = useState(0);
 
     const sortDirection = !props.sortOrder ? 'scaleY(-1)' : null;
-    const arrow = ( 
+    const direction = ( 
         <svg style={{transform: sortDirection}} width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.09769 5.06646H12.1595V3.03988H1.09769C0.491482 3.03988 0 3.49356 0 4.05315C0 4.61274 0.491482 5.06646 1.09769 5.06646Z" fill="black"/>
             <path d="M1.09769 9.62628H12.1595V7.59969H1.09769C0.491482 7.59969 0 8.05338 0 8.61301C0 9.17263 0.491482 9.62628 1.09769 9.62628Z" fill="black"/>
@@ -45,12 +45,12 @@ export default function SortSelector(props) {
                         title="Сортировка" 
                         className="sort-selector" 
                         onClick={() => setIsChoosen(!isChoosen)} 
-                        onBlur={onBlur} 
+                        // onBlur={handleBlur} 
                     >
                         {choose}
                     </button>
                     <button className="sort-direction" onClick={() => props.setSortOrder(!props.sortOrder)}>
-                        {arrow}
+                        {direction}
                     </button>
                     {
                         isChoosen 

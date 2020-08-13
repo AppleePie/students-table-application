@@ -10,16 +10,10 @@
     font-family: Geometria;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
     line-height: 50px;
     align-items: center;
     color: #000000;
-}
-
-@media screen and (min-width: 1024px) {
-    .text-students-body {
-        font-size: 40px;
-    }
 }
 
 .button-add-student {
@@ -46,7 +40,7 @@
     background: #2bbbe7;
 }
 
-.button-add-student img {
+.button-add-student svg {
     cursor: inherit;
     margin-right: 15px;
     align-items: center;
@@ -74,5 +68,9 @@
         width: 100%;
         display: grid;
         justify-content: unset;
+    }
+
+    .text-students-body {
+        font-size: 30px;
     }
 }

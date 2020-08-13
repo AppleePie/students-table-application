@@ -79,8 +79,6 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
             }
 
             fs.stat(result.value.avatar, (err, stats) => {
-                console.log(stats);
-             
                 if (err) {
                     return console.error(err);
                 }

@@ -1,5 +1,6 @@
 .avatar-container {
-    margin-bottom: 3%;
+    margin-top: 28px;
+    margin-bottom: 30px;
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -61,6 +62,7 @@
 }
 
 .avatar-size {
+    margin-top: 4px;
     width: 55px;
     height: 16px;
     font-family: Geometria;

@@ -15,7 +15,7 @@ export default function InputField(props) {
     // if (props.changeAvatar && text.length > 1 && text[1])
     //     props.changeAvatar(text[0][0] + text[1][0]);
 
-    const onBlur = useCallback(() => {
+    const handleBlur = useCallback(() => {
         const isValid = () => {
             let regex;
             switch(props.name) {
@@ -41,9 +41,9 @@ export default function InputField(props) {
 
     useEffect(() => {
         if (!props.isValid) {
-            onBlur();
+            handleBlur();
         }
-    }, [onBlur, props]);
+    }, [handleBlur, props]);
 
     return (
         <div className="input-field">
@@ -55,7 +55,7 @@ export default function InputField(props) {
                 placeholder={props.placeholder}
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
-                onBlur={onBlur}
+                onBlur={handleBlur}
             />
             <small className="alarm" style={{visibility: isBad ? 'visible' : 'hidden'}}>{alarms[props.name]}</small>
         </div>

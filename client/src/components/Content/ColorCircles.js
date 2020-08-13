@@ -27,11 +27,13 @@ export default function ColorCircle(props) {
 
     const onClick = () => {
         setIsChoosen(!isChoosen);
-        setIsBad(choose === 'Выбрать');
+        if (isChoosen) {
+            setIsBad(choose === 'Выбрать');
+        }
     };
 
-    const onBlur = useCallback((e) => {
-        if (e === undefined || e.relatedTarget == null || e.relatedTarget.className !== 'option') {
+    const handleBlur = useCallback((e) => {
+        if (e === undefined || e.relatedTarget == null || e.relatedTarget.className !== 'color-circle') {
             setIsChoosen(false);
             setIsBad(choose === 'Выбрать')
         }
@@ -39,9 +41,9 @@ export default function ColorCircle(props) {
 
     useEffect(() => {
         if (!props.isValid) {
-            onBlur(undefined);
+            handleBlur(undefined);
         }
-    }, [onBlur, props])
+    }, [handleBlur, props])
 
     return (
         <div className="pseudo-select">
@@ -50,7 +52,7 @@ export default function ColorCircle(props) {
                 className="field-select" 
                 style={{color: textColor, border: isBad ? '1px solid red' : '1px solid white'}}
                 onClick={onClick}
-                // onBlur={onBlur}
+                onBlur={handleBlur}
             >
                 {choose}
                 <div className="field-select-arrow"/>
@@ -62,7 +64,8 @@ export default function ColorCircle(props) {
                             {
                                 colorsCodes.map((item, index) => {
                                     return (
-                                        <div 
+                                        <button 
+                                            key={index}
                                             className="color-circle" 
                                             style={{background: item}}
                                             onClick={() => handleSelect(item)}
@@ -70,13 +73,12 @@ export default function ColorCircle(props) {
                                     );
                                 })
                             }
-                            <div 
-                                style={{background: 'none'}}
+                            <button 
+                                key={colorsCodes.length}
+                                style={{backgroundImage: 'url("/IMG/rainbow.png")', backgroundSize: '100% 100%'}}
                                 className="color-circle"
                                 onClick={() => handleSelect('/IMG/rainbow.png')}
-                            >
-                                <img className="color-circle" src="/IMG/rainbow.png" alt="LGBT"/>
-                            </div>
+                            />
                         </div>
                     : null
             }
