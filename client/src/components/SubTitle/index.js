@@ -7,7 +7,7 @@ export default function SubTitle(props) {
     return (
         props.isDefaultScreen 
             ? 
-                <div className="student-button-container" style={{marginTop: '67px'}}>
+                <div className="student-button-container">
                     <span className="text-students-body">Студенты</span>
                     <NewStudentButton handleClick={props.handleClick}/>
                 </div>
