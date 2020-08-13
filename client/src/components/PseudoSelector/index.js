@@ -15,7 +15,7 @@ export default function PseudoSelect(props) {
     
 
     return (
-        <div className="pseudo-select-options">
+        <div style={{top: props.margin}} className="pseudo-select-options">
             {
                 items.map((item, index) => {
                     return (

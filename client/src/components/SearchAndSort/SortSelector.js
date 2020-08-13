@@ -45,7 +45,7 @@ export default function SortSelector(props) {
                         title="Сортировка" 
                         className="sort-selector" 
                         onClick={() => setIsChoosen(!isChoosen)} 
-                        // onBlur={handleBlur} 
+                        onBlur={handleBlur} 
                     >
                         {choose}
                     </button>
@@ -58,6 +58,7 @@ export default function SortSelector(props) {
                                 <PseudoSelect 
                                     items={sortTypes} 
                                     action={handleClick} 
+                                    margin='calc(100% + 6px)'
                                     setSelectedItemId={setSelectedItemId}
                                     selectedItemId={selectedItemId}
                                 /> 

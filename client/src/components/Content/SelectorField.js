@@ -56,6 +56,7 @@ export default function SelectorField(props) {
                     ?   <PseudoSelect 
                             items={props.items}
                             action={handleSelect}
+                            margin='84px'
                             setSelectedItemId={setSelectedItemId} 
                             selectedItemId={selectedItemId}
                         />
