@@ -2,7 +2,7 @@ FROM node:alpine
 WORKDIR /usr/client/
 
 COPY package*.json ./
-RUN npm install
+RUN npm install --silent 
 COPY . .
 
 EXPOSE 3000

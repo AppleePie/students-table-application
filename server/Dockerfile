@@ -2,7 +2,7 @@ FROM node:alpine
 WORKDIR /usr/server
 RUN mkdir /usr/uploads/
 COPY package.json ./
-RUN npm install && npm install mongodb && npm install express multer
+RUN npm install --silent && npm install mongodb && npm install express multer
 RUN npm install mongoose --save
 COPY . .
 
