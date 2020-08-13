@@ -46,7 +46,7 @@ export default function SelectorField(props) {
                 className="field-select" 
                 onClick={handleCLick} 
                 onBlur={handleBlur} 
-                style={{color: textColor, border: isBad ? '1px solid red' : 'none'}}
+                style={{color: textColor, border: isBad ? '1px solid red' : '1px solid white'}}
             >
                 {props.dependenceValue ? props.dependenceValue : choose}
             <div className="field-select-arrow"></div>
@@ -62,7 +62,7 @@ export default function SelectorField(props) {
                         />
                     : null
                 }
-            <small className="alarm" style={{visibility: isBad ? 'visible' : 'hidden'}}>Выберите одно из списка</small>
+            <small className="alarm" style={{visibility: isBad ? 'visible' : 'hidden'}}>Поле не должно оставаться пустым</small>
         </div>
     );
 

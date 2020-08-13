@@ -30,7 +30,7 @@
 
 .field-input {  
     position: relative;
-    padding: 14px 0px 14px 20px;
+    padding: 14px 20px 14px 20px;
     max-width: 358px;
     outline: none;
     border: none;
@@ -158,6 +158,5 @@
 
     .submit {
         margin-top: 30px;
-        margin-bottom: 60px;
     }
 }

@@ -76,14 +76,14 @@ export default function Form(props) {
                     handleChange={handleChange} 
                     isValid={isValid} 
                     placeholder="0" 
-                    type="text" 
+                    type="number" 
                 />
                 <InputField 
                     name="Возраст" 
                     handleChange={handleChange} 
                     isValid={isValid} 
                     placeholder="0" 
-                    type="text"
+                    type="number"
                 />
                 <SelectorField 
                     name="Пол" 

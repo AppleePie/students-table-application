@@ -4,6 +4,7 @@
     margin-right: 13%;
     margin-top: 3%;
     height: 100%;
+    margin-bottom: 35px;
 }
 
 .button-back {
@@ -11,7 +12,7 @@
     display: flex;
     align-items: center;
     width: 315px;
-    margin-top: 2%;
+    margin-top: 32px;
     margin-bottom: 2%;
     margin-left: 12.5%;
     border: none;
@@ -41,10 +42,11 @@
         margin-left: 6%;
         margin-right: 6%;
         margin-top: 8%;
-        margin-bottom: 8%;
+        margin-bottom: 53px;
     }
 
     .button-back {
         margin-left: 4%;
+        margin-top: 22px;
     }
 }

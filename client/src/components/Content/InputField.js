@@ -7,8 +7,8 @@ export default function InputField(props) {
     const alarms = {
         'ФИО': 'Заполните ФИО кириллицей',
         'Email': 'Неверный e-mail',
-        'Возраст': 'Поле должно содержать только цифры',
-        'Рейтинг': 'Поле должно содержать только цифры'
+        'Возраст': 'Поле не должно оставаться пустым',
+        'Рейтинг': 'Поле не должно оставаться пустым'
     };
 
     // const text = value ? value.split(' ') : 'ФИ';
@@ -18,17 +18,15 @@ export default function InputField(props) {
     const handleBlur = useCallback(() => {
         const isValid = () => {
             let regex;
-            switch(props.name) {
-                case 'ФИО':
-                    regex = /^[А-Я\sа-яЁё]+$/;
-                    return value.split(' ').length >= 2 && regex.test(value);
-                case 'Email':
-                    regex = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/;
-                    return regex.test(value)
-                default:
-                    regex = /^[1-9]\d{0,2}$/;
-                    return regex.test(value);
+            if (props.name === 'ФИО') {
+                regex = /^[А-Я\sа-яЁё]+$/;
+                return value.split(' ').length >= 2 && regex.test(value);
             }
+            if (props.name === 'Email') {
+                regex = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/;
+                return regex.test(value)
+            }
+            return true;
         }
 
         if (isValid()) {
@@ -45,6 +43,10 @@ export default function InputField(props) {
         }
     }, [handleBlur, props]);
 
+    const handleChange = (e) => {
+        setValue(e.target.value.length <= 3 ? e.target.value : e.target.value.slice(0, 3));
+    }
+
     return (
         <div className="input-field">
             <label className="field-name">{props.name}</label>
@@ -54,7 +56,7 @@ export default function InputField(props) {
                 type={props.type}
                 placeholder={props.placeholder}
                 value={value}
-                onChange={(e) => setValue(e.target.value)}
+                onChange={handleChange}
                 onBlur={handleBlur}
             />
             <small className="alarm" style={{visibility: isBad ? 'visible' : 'hidden'}}>{alarms[props.name]}</small>

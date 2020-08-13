@@ -82,7 +82,7 @@ export default function ColorCircle(props) {
                         </div>
                     : null
             }
-            <small className="alarm" style={{visibility: isBad ? 'visible' : 'hidden'}}>Выберите одно из списка</small>
+            <small className="alarm" style={{visibility: isBad ? 'visible' : 'hidden'}}>Поле не должно оставаться пустым</small>
         </div>
     );
 }
