@@ -11,10 +11,6 @@ export default function InputField(props) {
         'Рейтинг': 'Поле не должно оставаться пустым'
     };
 
-    // const text = value ? value.split(' ') : 'ФИ';
-    // if (props.changeAvatar && text.length > 1 && text[1])
-    //     props.changeAvatar(text[0][0] + text[1][0]);
-
     const handleBlur = useCallback(() => {
         const isValid = () => {
             let regex;
@@ -44,11 +40,17 @@ export default function InputField(props) {
     }, [handleBlur, props]);
 
     const handleChange = (e) => {
-        setValue(e.target.value.length <= 3 ? e.target.value : e.target.value.slice(0, 3));
+        if (props.placeholder === '0') {
+            console.log(!isNaN(+e.target.value), +e.target.value)
+            const newValue = !isNaN(+e.target.value) ? e.target.value.slice(0, 3) : '';
+            setValue(newValue);
+        } else {
+            setValue(e.target.value)
+        }
     }
 
     return (
-        <div className="input-field">
+        <div className="form-field">
             <label className="field-name">{props.name}</label>
             <input
                 className="field-input"

@@ -22,27 +22,31 @@ export default function SpecAndGroup(props) {
         'Компьютерные науки': 'КН'
     }
 
-    let groups = currentSpecial !== 'Выбрать' ? getAllGroups(currentSpecial) : [];
+    const groups = currentSpecial !== 'Выбрать' ? getAllGroups(currentSpecial) : [];
+    const alarm = currentSpecial === 'Выбрать' ? 'Сначала нужно выбрать специальность' : '';
        
     return (
         <>
-            <SelectorField name="Специальность" items={specialities}
+            <SelectorField
+                name="Специальность"
+                items={specialities}
                 sideClick={(choose) => {
                     setCurrentSpecial(choose);
                     setDependenceValue('Выбрать');
-                    
                 }}
                 handleChange={props.handleChange}
                 isValid={props.isValid} 
-                setIsValid={props.setIsValid}
             />
-            <SelectorField name="Группа" items={groups} dependenceValue={dependenceValue} 
+            <SelectorField
+                name="Группа" 
+                items={groups} 
+                dependenceValue={dependenceValue} 
                 sideClick={(choose) => {
-                    setDependenceValue(choose)
+                    setDependenceValue(choose);
                 }}
+                alarm = {alarm}
                 handleChange={props.handleChange}
                 isValid={props.isValid} 
-                setIsValid={props.setIsValid}
             />
         </>
     );

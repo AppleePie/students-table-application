@@ -46,7 +46,7 @@ export default function ColorCircle(props) {
     }, [handleBlur, props])
 
     return (
-        <div className="pseudo-select">
+        <div className="form-field">
             <label className="field-name">{props.name}</label>
             <button 
                 className="field-select" 

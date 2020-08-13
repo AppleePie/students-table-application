@@ -40,9 +40,10 @@ export default function SelectorField(props) {
     }, [handleBlur, props])
 
     return (
-        <div className="pseudo-select">
+        <div className="form-field">
             <label className="field-name">{props.name}</label>
             <button 
+                tabIndex="0"
                 className="field-select" 
                 onClick={handleCLick} 
                 onBlur={handleBlur} 
@@ -62,7 +63,12 @@ export default function SelectorField(props) {
                         />
                     : null
                 }
-            <small className="alarm" style={{visibility: isBad ? 'visible' : 'hidden'}}>Поле не должно оставаться пустым</small>
+            <small
+                className="alarm" 
+                style={{visibility: isBad ? 'visible' : 'hidden'}}
+            >
+                {props.alarm || 'Поле не должно оставаться пустым'}
+            </small>
         </div>
     );
 
