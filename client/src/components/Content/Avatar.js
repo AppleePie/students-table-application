@@ -22,13 +22,15 @@ export default function ChangeAvatarButton(props) {
             setFile(reader.result);
         };
         
-        if (file.type.startsWith('image')) {
-            setIsFileExist(true);
-            reader.readAsDataURL(file);
-            props.setAvatar('avatar', file);
-        } else {
-            alert('Для аватара разрешены только изображения')
-        }
+        if (file) {
+            if (file.type.startsWith('image')) {
+                setIsFileExist(true);
+                reader.readAsDataURL(file);
+                props.setAvatar('avatar', file);
+            } else {
+                alert('Используйте для аватара только изображения')
+            }
+        } 
 
     }
 
