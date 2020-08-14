@@ -127,4 +127,4 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 **METHOD**: `DELETE`
 
-**EXPECTED RESPONSE STATUS** 200
+**EXPECTED RESPONSE STATUS**: 200
