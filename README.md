@@ -5,7 +5,7 @@ You can view the expanded demo [here](http://165.232.74.148:3000). Frontend uses
 
 # Deployment
 
-Installation requires docker and docker-compose. To install them, use your package Manager. The Ubuntu apt will be used as an example.
+Installation requires docker and docker-compose. To install them, use your package manager. The Ubuntu `apt` will be used as an example.
 
 ## Pre-training
 
@@ -82,7 +82,7 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 ## Getting students
 
-**DESCRIPTION**: Retrieves all students contained in the MongoDB-collection
+**DESCRIPTION**: retrieves all students contained in the MongoDB-collection
 
 **URL**: `/api/get/`
 
@@ -119,7 +119,7 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 ## Deleting students
 
-**DESCRIPTION**: Deletes a student from the MongoDB-collection
+**DESCRIPTION**: deletes a student from the MongoDB-collection
 
 **URL**: `/api/delete/:id`
 
