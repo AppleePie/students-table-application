@@ -15,11 +15,6 @@ const storageConfig = multer.diskStorage({
 
 app.use(express.static(__dirname));
 app.use(express.json());
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type, X-Requested-With");
-    next();
-});
 
 let upload = multer({storage: storageConfig}).single("avatar");
 
@@ -29,7 +24,6 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
         return res.sendStatus(500);
     }
     const db = client.db('mongo');
-    // db.collection('students').drop();
     const collection = db.collection('students');
 
     app.get('/api/get', (req, res) => {
@@ -65,7 +59,7 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
                    return console.error(err);
                 }
             });
-            res.sendStatus(200);
+            res.sendStatus(201);
         });
     });
 
@@ -88,9 +82,9 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
                     if (err) {
                         return console.error(err);
                     }
-                    console.log('file deleted successfully');
                 });  
             });
+            res.sendStatus(200);
         });
     })
 

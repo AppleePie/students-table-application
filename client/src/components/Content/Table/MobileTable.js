@@ -37,9 +37,9 @@ export default function MobileTable(props) {
                                 <span>{getNameAndLastname(student.name)}</span>
                                 <div className="color-rating-cell">
                                 {
-                                        student.color.endsWith('.png') 
+                                        student.color === 'rainbow'
                                             ?
-                                                <img className="mobile-color-circle" src={student.color} alt="Радуга"></img>
+                                                <img className="mobile-color-circle" src={'/IMG/rainbow.png'} alt="Радуга"></img>
                                             :
                                                 <div className="mobile-color-circle" style={{background: student.color}}/>
                                 }

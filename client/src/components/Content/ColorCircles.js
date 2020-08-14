@@ -14,7 +14,7 @@ export default function ColorCircle(props) {
         '#F7FB53': 'Жёлтый',
         '#000000': 'Чёрный',
         '#EFA638': 'Оранжевый',
-        '/IMG/rainbow.png': 'LGBTQ+ <3'
+        'rainbow': 'LGBTQ+ <3'
     }
 
     const handleSelect = (currentColor) => {
@@ -77,7 +77,7 @@ export default function ColorCircle(props) {
                                 key={colorsCodes.length}
                                 style={{backgroundImage: 'url("/IMG/rainbow.png")', backgroundSize: '100% 100%'}}
                                 className="color-circle"
-                                onClick={() => handleSelect('/IMG/rainbow.png')}
+                                onClick={() => handleSelect('rainbow')}
                             />
                         </div>
                     : null

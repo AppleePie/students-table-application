@@ -35,9 +35,12 @@ export default function DesktopTable(props) {
                                 <td>{student.rating}</td>
                                 <td>
                                 {
-                                    student.color.endsWith('.png') 
+                                    student.color === 'rainbow'
                                         ?
-                                            <img className="table-color-circle" src={student.color} alt="Радуга"></img>
+                                            <div
+                                                className="table-color-circle" 
+                                                style={{backgroundImage: 'url("/IMG/rainbow.png")', backgroundSize: '100% 100%'}}
+                                            />
                                         :
                                             <div className="table-color-circle" style={{background: student.color}}/>
                                 }
