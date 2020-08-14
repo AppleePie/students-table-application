@@ -7,6 +7,7 @@ var studentScheme = new Schema({
     group: String,
     rating: Number,
     age: Number,
+    gender: String,
     color: String, 
 });
 module.exports = mongoose.model("student", studentScheme);
