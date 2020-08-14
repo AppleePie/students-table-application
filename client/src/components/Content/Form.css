@@ -85,7 +85,7 @@
     grid-auto-flow: column;
     position: absolute;
     width: 96%;
-    max-width: 360px;
+    max-width: 380px;
     z-index: 1;
     background-color: #fff;
     border-radius: 6px;
