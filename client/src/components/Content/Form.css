@@ -122,6 +122,7 @@
 
 .submit:hover {
     background: #2bbbe7;
+    cursor: pointer;
 }
 
 .submit-text {
