@@ -1,7 +1,7 @@
 This project presents a Single Page Application for working with a list of students. 
 The web application is written in React, MongoDB is used as a database, API is implemented in Node.js.
 
-You can view the expanded demo [here](http://165.232.74.148:3000). Frontend uses port 3000; API uses port 4000. You can change it in the docker-compose.yml in the environment of the service `client` for web-app or `server` for API.
+You can view the deployed demo [here](http://165.232.74.148:3000). Web-app uses port 3000; API uses port 4000. You can change it in the docker-compose.yml in the environment of the service `client` for web-app or `server` for API.
 
 # Deployment
 
@@ -82,7 +82,7 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 ## Getting students
 
-**DESCRIPTION**: retrieves all students contained in the MongoDB-collection
+**DESCRIPTION**: retrieves all students contained in the MongoDB-collection.
 
 **URL**: `/api/get`
 
@@ -109,7 +109,7 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 ## Adding students
 
-**DESCRIPTION**: adds a new student to the MongoDB-collection
+**DESCRIPTION**: adds a new student to the MongoDB-collection.
 
 **URL**: `/api/post`
 
