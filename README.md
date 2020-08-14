@@ -82,13 +82,13 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 ## Getting students
 
-**DESCRIPTION**: Retrieves all students contained in the collection MongoDB
+**DESCRIPTION**: Retrieves all students contained in the MongoDB-collection
 
 **URL**: `/api/get/`
 
 **METHOD**: `GET`
 
-**RESPONSE STATUS:** 200
+**EXPECTED RESPONSE STATUS** 200
 
 **RESPONSE BODY**:
 ```
@@ -115,11 +115,11 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 **METHOD**: `POST`
 
-**RESPONSE STATUS:** 201
+**EXPECTED RESPONSE STATUS:** 201
 
 ## Deleting students
 
-**DESCRIPTION**: Deletes a student from the collection of MongoDB
+**DESCRIPTION**: Deletes a student from the MongoDB-collection
 
 **URL**: `/api/delete/:id`
 
@@ -127,4 +127,4 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 **METHOD**: `DELETE`
 
-**RESPONSE STATUS:** 200
+**EXPECTED RESPONSE STATUS** 200
