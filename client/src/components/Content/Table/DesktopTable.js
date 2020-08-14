@@ -16,7 +16,7 @@ export default function DesktopTable(props) {
                     <th width="3%"></th>
                     <th width="3%"></th>
                 </tr>
-                {students ? <tr style={{height: '16px'}}></tr> : null}
+                <tr style={{height: '16px'}}></tr>
             </thead>
             <tbody>
                 {
@@ -54,7 +54,7 @@ export default function DesktopTable(props) {
                         )
                     )
                 }
-                <tr><td style={{width: '0px', height: '0px'}}></td></tr>
+                {students.length !== 0 ? <tr><td style={{width: '0px', height: '0px'}}></td></tr> : null}
             </tbody>
         </table>
     );
