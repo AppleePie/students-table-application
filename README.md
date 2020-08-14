@@ -82,6 +82,8 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 ## Getting students
 
+**DESCRIPTION**: Retrieves all students contained in the collection MongoDB
+
 **URL**: `/api/get/`
 
 **METHOD**: `GET`
@@ -107,6 +109,8 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 ## Adding students
 
+**DESCRIPTION**: adds a new student to the MongoDB-collection
+
 **URL**: `/api/post/`
 
 **METHOD**: `POST`
@@ -114,6 +118,8 @@ You can change it in the docker-compose.yml in the environment of the service `s
 **RESPONSE STATUS:** 201
 
 ## Deleting students
+
+**DESCRIPTION**: Deletes a student from the collection of MongoDB
 
 **URL**: `/api/delete/:id`
 
