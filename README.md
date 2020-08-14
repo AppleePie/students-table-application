@@ -119,7 +119,7 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 ## Deleting students
 
-**DESCRIPTION**: sDeletes a student from the collection of MongoDB
+**DESCRIPTION**: Deletes a student from the collection of MongoDB
 
 **URL**: `/api/delete/:id`
 
