@@ -90,7 +90,7 @@ You can change it in the docker-compose.yml in the environment of the service `s
 
 **EXPECTED RESPONSE STATUS** 200
 
-**RESPONSE BODY**:
+**EXAMPLE RESPONSE BODY**:
 ```
 [
   {
