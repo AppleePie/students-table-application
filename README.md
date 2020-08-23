@@ -94,7 +94,7 @@ You can change it in the docker-compose.yml in the environment of the service `s
 ```
 [
   {
-    _id": "5f35c69b1fde7f5657769dc5",
+    "_id": "5f35c69b1fde7f5657769dc5",
     "avatar": "uploads/GeneratedFileName",
     "name": "Иванов Иван Иванович",
     "speciality": "Прикладная информатика",
