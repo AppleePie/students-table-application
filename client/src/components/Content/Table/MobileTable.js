@@ -40,7 +40,7 @@ export default function MobileTable(props) {
                                         student.color === 'rainbow'
                                             ?
                                                 <div
-                                                    className="mobile-color-circle" 
+                                                    className="mobile-color-circle"
                                                     style={{backgroundImage: 'url("/IMG/rainbow.png")', backgroundSize: '100% 100%'}}
                                                 />
                                             :

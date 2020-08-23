@@ -37,7 +37,7 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
     });
 
     app.post('/api/post', (req, res) => {
-        upload(req, res, function(err) {
+        upload(req, res, (err) => {
             if(err) {
                 console.error(err);
                 return res.sendStatus(500);
