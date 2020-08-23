@@ -32,7 +32,7 @@ MongoClient.connect('mongodb://mongo:27017/students/mongo', (err, client) => {
                 console.error(err);
                 return res.sendStatus(500);
             }
-            res.send(docs);
+            res.send(docs).status(200);
         });
     });
 
