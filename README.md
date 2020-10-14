@@ -1,7 +1,7 @@
 This project presents a Single Page Application for working with a list of students. 
 The web application is written in React, MongoDB is used as a database, API is implemented in Node.js.
 
-You can view the deployed demo [here](http://159.89.107.155:3000/). Web-app uses port 3000; API uses port 4000. You can change it in the docker-compose.yml in the environment of the service `client` for web-app or `server` for API.
+You can view the deployed demo [here](http://198.199.65.239:3000/). Web-app uses port 3000; API uses port 4000. You can change it in the docker-compose.yml in the environment of the service `client` for web-app or `server` for API.
 
 # Deployment
 
